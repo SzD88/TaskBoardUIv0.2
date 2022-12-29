@@ -1,11 +1,12 @@
-<h2>My Projects</h2>
-<ul >
-  <li   *ngFor="let project of pobraneObiekty">
+<!--<h2>My Projects</h2>
+<ul class="projects">
+
+  <li *ngFor="let project of pobraneObiekty">
     <button [class.selected]="project === selectedProject" type="button" (click)="onSelect(project)">
       <span class="badge">{{project.id}}</span>
     </button>
   </li>
-</ul>
+</ul>-->
 
 <!--<div *ngIf="selectedProject">
   <h2>{{selectedProject.title | uppercase}} Details</h2>
@@ -18,6 +19,10 @@
 
 
 <div class="otherclass" *ngFor="let zz of pobraneObiekty | async">
-  <span>{{ zz.id }}</span>
+  <li>
+    <span class="badge">{{zz.id}}</span>
 
+    <!--<button type="button" (click)="onSelect(zz.id)" >  TEXT</button >-->
+
+  </li>
 </div>

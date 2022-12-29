@@ -3,7 +3,7 @@ import { Project } from '../Project';
 import { Task } from '../Task';
 // import { PROJECTS } from '../mock-Projects';
 import { CRUDProjects } from '../CRUD-Projects';
-import { Observable } from 'rxjs';
+import { concatWith, Observable } from 'rxjs';
 import { CartService } from '../cart.service';
 
 
@@ -16,7 +16,9 @@ export class ProjectsComponent implements OnInit {
 
   constructor(private cartService: CartService) { }
 
-  pobraneObiekty!: Observable<{ id: string }[]>;
+  // arr!: Observable<{ proj : Project    }[]>
+//  https://www.youtube.com/watch?v=Vv6Tbk32N8o
+  pobraneObiekty!: Observable<{ id: string  }[]>; // | undefined
 
   //pobraneObiekty!: Observable<{
   //  id: string,
@@ -27,12 +29,13 @@ export class ProjectsComponent implements OnInit {
 
 
   //}[]>;
-
   
   ngOnInit(): void {
+
+
   //   this.pobraneObiekty = this.projects.getProjects();
         this.pobraneObiekty = this.cartService.getSomethingElse();
-
+    console.log(this.pobraneObiekty);
   }
    
   selectedProject?: Project;

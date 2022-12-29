@@ -41,7 +41,7 @@ export class CartService {
 
     getSomethingElse() {
   
-        return this.http.get<{
+        var cos =  this.http.get<{
             options: {
                 headers?: HttpHeaders | { [header: string ]: string | string[] },
                 observe?: 'body' | 'events' | 'response' 
@@ -53,7 +53,9 @@ export class CartService {
             id: string,
         }[]>('https://localhost:7227/api/Projects');
 
-
+       console.log("to gowno:");
+       console.log(cos.forEach);
+      return cos;
     }
     
     //addProject(enter: JSON): Observable<JSON> {
