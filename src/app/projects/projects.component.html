@@ -1,0 +1,23 @@
+<h2>My Projects</h2>
+<ul >
+  <li   *ngFor="let project of pobraneObiekty">
+    <button [class.selected]="project === selectedProject" type="button" (click)="onSelect(project)">
+      <span class="badge">{{project.id}}</span>
+    </button>
+  </li>
+</ul>
+
+<!--<div *ngIf="selectedProject">
+  <h2>{{selectedProject.title | uppercase}} Details</h2>
+  <div>id: {{selectedProject.id}}</div>
+  <div>
+    <label for="project-name">Hero name: </label>
+    <input id="project-name" [(ngModel)]="selectedProject.title" placeholder="title">
+  </div>
+</div>-->
+
+
+<div class="otherclass" *ngFor="let zz of pobraneObiekty | async">
+  <span>{{ zz.id }}</span>
+
+</div>

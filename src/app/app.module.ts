@@ -3,14 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+
+    AppRoutingModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
