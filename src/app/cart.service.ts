@@ -34,7 +34,11 @@ export class CartService {
         return this.items;
     }
 
+  getData() {
 
+    return this.http.get('https://localhost:7227/api/Projects');
+
+  }
     getShippingPrices() {
         return this.http.get<{ type: string, price: number }[]>('/assets/shipping.json');
     }

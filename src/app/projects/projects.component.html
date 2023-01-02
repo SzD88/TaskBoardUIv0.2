@@ -7,22 +7,27 @@
     </button>
   </li>
 </ul>-->
+<!--{{myData | json}}-->
 
-<!--<div *ngIf="selectedProject">
-  <h2>{{selectedProject.title | uppercase}} Details</h2>
+<div *ngIf="selectedProject">
+  <h2>{{selectedProject.projectNumber | uppercase}} Details</h2>
   <div>id: {{selectedProject.id}}</div>
   <div>
-    <label for="project-name">Hero name: </label>
+    <label for="project-name">Project title: </label>
     <input id="project-name" [(ngModel)]="selectedProject.title" placeholder="title">
   </div>
-</div>-->
+</div>
 
+<h2>Projects: </h2>
+<ul class="projects">
+  <li *ngFor="let project of myData">
 
-<div class="otherclass" *ngFor="let zz of pobraneObiekty | async">
-  <li>
-    <span class="badge">{{zz.id}}</span>
-
-    <!--<button type="button" (click)="onSelect(zz.id)" >  TEXT</button >-->
+    <button [class.selected]="project === selectedProject" type="button" (click)="onSelect(project)">
+      <span class="badge">{{project.projectNumber}}</span> 
+      <span class="title">{{project.title}}</span>
+    </button>
 
   </li>
-</div>
+</ul>
+
+

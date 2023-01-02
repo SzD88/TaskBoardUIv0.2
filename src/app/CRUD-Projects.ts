@@ -23,6 +23,12 @@ export class CRUDProjects {
     private http: HttpClient
   ) { }
 
+  getData() {
+
+    return this.http.get('https://localhost:7227/api/Projects');
+
+  }
+
 
   getProjects() {
 
