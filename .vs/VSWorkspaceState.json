@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\entities",
+    "\\src\\app\\project-detail",
+    "\\src\\app\\projects",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\C:\\Users\\szopa\\Source\\Repos\\ProjectManagerAngularApp",
+  "SelectedNode": "\\src\\app\\project-detail\\project-detail.component.ts",
   "PreviewInSolutionExplorer": false
 }

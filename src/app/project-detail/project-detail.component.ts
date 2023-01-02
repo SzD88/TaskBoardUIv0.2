@@ -9,7 +9,7 @@ import { Project } from '../entities/Project';
 })
 export class ProjectDetailComponent {
 
-
+ 
  
 
   @Input() project?: Project; // to jest powiazane z selected project

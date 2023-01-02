@@ -20,7 +20,10 @@
     <label for="project-projectNumber">Project number: </label>
     <input id="project-projectNumber" [(ngModel)]="project.projectNumber" placeholder="projectNumber">
     <br />
-    <div>Last modified: {{project.lastModifiedDate.toLocaleString()}}</div>
+
+    <div>Last modified: {{project.lastModifiedDate |  date:'short' }}</div>
+
+ 
 
   </div>
 </div>
