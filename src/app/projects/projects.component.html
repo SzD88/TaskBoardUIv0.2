@@ -7,23 +7,29 @@
     </button>
   </li>
 </ul>-->
+
 <!--{{myData | json}}-->
+
 
 <div *ngIf="selectedProject">
   <h2>{{selectedProject.projectNumber | uppercase}} Details</h2>
   <div>id: {{selectedProject.id}}</div>
   <div>
     <label for="project-name">Project title: </label>
-    <input id="project-name" [(ngModel)]="selectedProject.title" placeholder="title">
+    <input id="project-title" [(ngModel)]="selectedProject.title" placeholder="title">
+    <input id="project-projectNumber" [(ngModel)]="selectedProject.projectNumber" placeholder="projectNumber">
   </div>
 </div>
+
+<!--<app-project-detail [project]="selectedProject"></app-project-detail>-->
+
 
 <h2>Projects: </h2>
 <ul class="projects">
   <li *ngFor="let project of myData">
 
     <button [class.selected]="project === selectedProject" type="button" (click)="onSelect(project)">
-      <span class="badge">{{project.projectNumber}}</span> 
+      <span class="badge">{{project.projectNumber}}</span>
       <span class="title">{{project.title}}</span>
     </button>
 

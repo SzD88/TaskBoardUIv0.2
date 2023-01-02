@@ -1,5 +1,5 @@
-import { Project } from './Project';
-import { Task } from './Task';
+import { Project } from '../entities/Project';
+import { Task } from '../entities/Task';
 
 export const PROJECTS: Project[] = [
   

@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Project } from './Project';
+import { Project } from '../entities/Project';
 import { Injectable, NgModule } from '@angular/core';
 
 import { Observable, throwError } from 'rxjs';
@@ -14,34 +14,21 @@ export class AppModule { }
 @Injectable({
     providedIn: 'root'
 })
-export class CartService {
+export class ProjectService {
     items: Project[] = [];
 
     constructor(
         private http: HttpClient
     ) { }
 
-    addToCart(product: Project) {
-        this.items.push(product);
-    }
-
-    getItems() {
-        return this.items;
-    }
-
-    clearCart() {
-        this.items = [];
-        return this.items;
-    }
+ 
 
   getData() {
 
     return this.http.get('https://localhost:7227/api/Projects');
 
   }
-    getShippingPrices() {
-        return this.http.get<{ type: string, price: number }[]>('/assets/shipping.json');
-    }
+ 
 
     getSomethingElse() {
   
@@ -57,8 +44,6 @@ export class CartService {
             id: string,
         }[]>('https://localhost:7227/api/Projects');
 
-       console.log("to gowno:");
-       console.log(cos.forEach);
       return cos;
     }
     
