@@ -11,7 +11,7 @@
 <!--{{myData | json}}-->
 
 
-<div *ngIf="selectedProject">
+<!--<div *ngIf="selectedProject">
   <h2>{{selectedProject.projectNumber | uppercase}} Details</h2>
   <div>id: {{selectedProject.id}}</div>
   <div>
@@ -19,9 +19,9 @@
     <input id="project-title" [(ngModel)]="selectedProject.title" placeholder="title">
     <input id="project-projectNumber" [(ngModel)]="selectedProject.projectNumber" placeholder="projectNumber">
   </div>
-</div>
+</div>-->
 
-<!--<app-project-detail [project]="selectedProject"></app-project-detail>-->
+<app-project-detail [project]="selectedProject"></app-project-detail>
 
 
 <h2>Projects: </h2>

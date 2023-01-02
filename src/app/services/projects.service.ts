@@ -4,7 +4,7 @@ import { Injectable, NgModule } from '@angular/core';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-
+import { DatePipe } from '@angular/common';
 ///
  
 export class AppModule { }
@@ -47,29 +47,29 @@ export class ProjectService {
       return cos;
     }
     
-    //addProject(enter: JSON): Observable<JSON> {
+    addProject(enter: JSON): Observable<JSON> {
 
        
-    //    console.log(enter);
+        console.log(enter);
 
-    //    const httpOptions = {
-    //        headers: new HttpHeaders({
-    //            'Content-Type': 'application/json',
-    //          //  Authorization: 'my-auth-token'
-    //        })
-    //    }; 
-    //    const url = 'https://localhost:7227/api/Projects';
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+              //  Authorization: 'my-auth-token'
+            })
+        }; 
+        const url = 'https://localhost:7227/api/Projects';
          
-    //    // w tej formie to dopiero dzialalo 
+        // w tej formie to dopiero dzialalo 
 
-    //    const req = this.http.post<JSON>(url, enter, httpOptions);
-    //    // 0 requests made - .subscribe() not called.
-    //    req.subscribe();
-    //    // 1 request made.
-    //    req.subscribe();
-    //    // 2 requests made.
+        const req = this.http.post<JSON>(url, enter, httpOptions);
+        // 0 requests made - .subscribe() not called.
+        req.subscribe();
+        // 1 request made.
+        req.subscribe();
+        // 2 requests made.
 
-    //    return req;
-    //}
+        return req;
+    }
     
 }

@@ -1,9 +1,35 @@
 <div *ngIf="project">
-  <h2>{{project.projectNumber | uppercase}} Details</h2>
+  <h2>{{project.projectNumber | uppercase}} details</h2>
   <div>id: {{project.id}}</div>
+ 
+
+  <div *ngIf="project.completed"> Completed  </div>
+
   <div>
-    <label for="project-name">Project title: </label>
-    <input id="project-title" [(ngModel)]="project.title" placeholder="title">
+    <label for="project-projectNumber">Project number: </label>
     <input id="project-projectNumber" [(ngModel)]="project.projectNumber" placeholder="projectNumber">
+    <br />
+    <label for="project-name">   Project title:    </label>
+    <input id="project-title" [(ngModel)]="project.title" placeholder="title">
+    <br />
+    <label for="project-description">Project description: </label>
+    <input id="project-description" [(ngModel)]="project.description" placeholder="description">
+    <br />
+
+
+    <label for="project-projectNumber">Project number: </label>
+    <input id="project-projectNumber" [(ngModel)]="project.projectNumber" placeholder="projectNumber">
+    <br />
+    <div>Last modified: {{project.lastModifiedDate.toLocaleString()}}</div>
+
   </div>
 </div>
+
+
+ <!--"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "projectNumber": "string",
+  "title": "string",
+  "description": "string",
+  "completed": true,
+  "creationDate": "2023-01-02T17:36:43.388Z",
+  "lastModifiedDate": "2023-01-02T17:36:43.388Z",-->
