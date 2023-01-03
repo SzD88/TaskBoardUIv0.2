@@ -4,7 +4,10 @@
     "\\.angular",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\projects"
+    "\\src\\app\\entities",
+    "\\src\\app\\project-detail",
+    "\\src\\app\\projects",
+    "\\src\\app\\services"
   ],
   "SelectedNode": "\\src\\app\\projects\\projects.component.ts",
   "PreviewInSolutionExplorer": false
