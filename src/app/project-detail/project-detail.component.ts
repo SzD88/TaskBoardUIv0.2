@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Project } from '../entities/Project';
 
@@ -8,6 +9,8 @@ import { Project } from '../entities/Project';
 })
 export class ProjectDetailComponent {
 
+ 
+ 
 
   @Input() project?: Project; // to jest powiazane z selected project
 

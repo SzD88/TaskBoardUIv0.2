@@ -6,4 +6,5 @@ export interface Project {
   title: string;
   description: string;
   completed: boolean;
+  lastModifiedDate: Date
 }
