@@ -23,7 +23,34 @@
 
     <div>Last modified: {{project.lastModifiedDate |  date:'short' }}</div>
 
- 
+
+    <button type="button" (click)="onChangesSubmited((project))">
+      <span class="crud">SUBMIT CHANGES</span>
+    </button>
+
+
+    <button type="button" (click)="deleteCurrentProject((project.id))">
+      <span class="crud">DELETE</span>
+    </button>
+    <br />
+    <br />
+    <button type="button" (click)="addNewAsCurrent((project))">
+      <span class="crud">CREATE</span>
+    </button>
+    <!--<div>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName />-->
+    <!-- (click) passes input value to add() and then clears the input -->
+    <!--<button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
+      Add hero
+    </button>
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "projectNumber": "string",
+  "title": "string",
+  "description": "string",
+  "completed": true
+  </div>-->
+    <!--<some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element>-->
 
   </div>
 </div>
