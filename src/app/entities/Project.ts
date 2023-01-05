@@ -8,3 +8,4 @@ export interface Project {
   completed: boolean;
   lastModifiedDate: Date
 }
+
