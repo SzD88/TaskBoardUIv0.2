@@ -24,7 +24,11 @@ import { MessagesComponent } from './messages/messages.component'; // <-- NgMode
     HttpClientModule,
 
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: '', component: ProjectDetailComponent },
+    
+    ])
 
   ],
   providers: [],
