@@ -5,10 +5,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\entities",
-    "\\src\\app\\messages",
     "\\src\\app\\project-detail",
     "\\src\\app\\projects",
-    "\\src\\app\\services"
+    "\\src\\app\\services",
+    "\\src\\assets"
   ],
   "SelectedNode": "\\src\\app\\project-detail\\project-detail.component.html",
   "PreviewInSolutionExplorer": false

@@ -44,8 +44,8 @@ export class ProjectDetailComponent {
     this.projectService.addProject(JSON.parse(jsn));
   }
 
-  deleteCurrentProject(id: number): Observable<boolean> {
-    var cos = this.projectService.deleteProject(id);
+  //deleteCurrentProject(id: number): Observable<boolean> {
+  //  var cos = this.projectService.deleteProject(id);
 
    
    //  this.router.navigate(['/projects' ]);
@@ -54,4 +54,4 @@ export class ProjectDetailComponent {
   }
   
  
-}
+ 

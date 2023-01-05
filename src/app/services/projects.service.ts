@@ -36,9 +36,15 @@ export class ProjectService {
 
  
   // was getData
-  getAllProjects() {
+  //getAllProjects() {
 
-    return this.http.get(projectsURL);
+  //  return this.http.get(projectsURL);
+
+  //}
+
+  getAllProjects(): Observable<Project[]> {
+
+    return this.http.get<Project[]>(projectsURL);
 
   }
   refresh() { 
