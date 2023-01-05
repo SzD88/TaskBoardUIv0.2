@@ -5,6 +5,7 @@ import { Injectable, NgModule } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
+import { MessageService } from './message.service';
 ///
  
 export class AppModule { }
@@ -18,13 +19,16 @@ export class ProjectService {
     items: Project[] = [];
 
     constructor(
-        private http: HttpClient
+      private http: HttpClient,
+      private messageService: MessageService
     ) { }
 
  
 
   getData() {
 
+
+    this.messageService.add('ProjectsService: fetched projects');
     return this.http.get('https://localhost:7227/api/Projects');
 
   }
