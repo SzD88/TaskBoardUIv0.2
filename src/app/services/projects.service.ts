@@ -15,6 +15,8 @@ export class AppModule {
 ////
 const projectsURL = 'https://localhost:7227/api/Projects';
 
+const mainURL = 'http://localhost:4200/';
+
 
 @Injectable({
     providedIn: 'root'
@@ -44,11 +46,14 @@ export class ProjectService {
 
   getAllProjects(): Observable<Project[]> {
 
-    return this.http.get<Project[]>(projectsURL);
+    var projects = this.http.get<Project[]>(projectsURL);
+    return projects;
 
   }
-  refresh() { 
-    return this.http.get(projectsURL); 
+  refresh() {
+
+    window.location.href = mainURL;
+
   }
 
   updateProject(enter: JSON): Observable<JSON> { 
@@ -83,7 +88,8 @@ export class ProjectService {
         req.subscribe();
         // 1 request made.
         req.subscribe();
-        // 2 requests made. 
+        // 2 requests made.
+
         return req;
   }
 
@@ -126,23 +132,17 @@ export class ProjectService {
     };
 
     const req = this.http.delete<JSON>(deleteUrl, httpOptions);
-
-    //.pipe()
-    //.subscribe(
-
-    //  data => {
-    //    console.log(data);
-    //  });
-
-
-    ; // subscribe was solution - again
+ 
+     
 
     console.log(id + " deleted");
 
     req.subscribe();
     // 1 request made.
     req.subscribe();
-    // 2 requests made. 
+    // 2 requests made.
+
+    this.refresh();
     return req;
   }
 

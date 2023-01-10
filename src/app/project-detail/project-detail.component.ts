@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Project } from '../entities/Project';
 import { ProjectsComponent } from '../projects/projects.component';
 import { ProjectService } from '../services/projects.service';
@@ -22,6 +22,7 @@ export class ProjectDetailComponent {
     private router: Router,
     private route: ActivatedRoute,
     private projects: ProjectsComponent,
+
   ) { }
 
   ngOnInit() {
@@ -47,11 +48,19 @@ export class ProjectDetailComponent {
   deleteCurrentProject(id: number) { //  Observable<boolean> {
   //  this.projectService.deleteProject(id);
 
-    this.projectService.deleteProject(id).subscribe(() => {
-    //   window.location.reload();
-      window.location.href = "http://localhost:4200/";
-    })
+   // this.subscription =
+    this.projectService.testDelete(id).subscribe(() => {
 
+    //  this.projects.ngOnInit();
+
+   //   this.projectService.refresh();
+    }) 
+   // window.location.href = "http://localhost:4200/";
+    //if (this.subscription)
+    //  this.subscription.unsubscribe();
+
+
+    
   }
   //  this.router.navigate(['/projects' ]);
   // this.router.navigate(['/projects', { id: heroId }]);

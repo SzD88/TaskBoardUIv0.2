@@ -20,7 +20,8 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void { 
     this.projectService.getAllProjects().subscribe((data) => {
-      this.myData = data; 
+      this.myData = data;
+
     });
      
   }
