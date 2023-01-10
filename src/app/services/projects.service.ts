@@ -2,30 +2,57 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Project } from '../entities/Project';
 import { Injectable, NgModule } from '@angular/core';
 
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
+import { catchError, delay, retry } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
+import { MessageService } from './message.service';
+import { Router, Routes } from '@angular/router';
 ///
  
-export class AppModule { }
+export class AppModule {
+
+}
 ////
 const projectsURL = 'https://localhost:7227/api/Projects';
+
+const mainURL = 'http://localhost:4200/';
+
 
 @Injectable({
     providedIn: 'root'
 })
 export class ProjectService {
-    items: Project[] = [];
+  items: Project[] = [];
+
+  refresh$ = new BehaviorSubject<boolean>(true);
+
+  //get deleteOperationSuccessfulEvent$(): Observable<boolean> {
+  //  return this._deleteOperationSuccessfulEvent$.asObservable();
+  //}
 
     constructor(
-        private http: HttpClient
+      private http: HttpClient,
+      private messageService: MessageService,
+      private router: Router
     ) { }
 
  
   // was getData
-  getAllProjects() {
+  //getAllProjects() {
 
-    return this.http.get(projectsURL);
+  //  return this.http.get(projectsURL);
+
+  //}
+
+  getAllProjects(): Observable<Project[]> {
+
+    var projects = this.http.get<Project[]>(projectsURL);
+    return projects;
+
+  }
+  refresh() {
+
+    window.location.href = mainURL;
 
   }
 
@@ -61,33 +88,62 @@ export class ProjectService {
         req.subscribe();
         // 1 request made.
         req.subscribe();
-        // 2 requests made. 
+        // 2 requests made.
+
         return req;
   }
 
-  deleteProject(id: number) {
+  deleteProject(id: number): Observable<Project>  {
     const deleteUrl = `${projectsURL}?id=${id}`;
-    console.log(deleteUrl + " url to delete");
-   //  https://localhost:7227/api/Projects?id=e9246e04-1505-4d1b-8651-3fe383d6ddcb'
-    console.log(  "example :  https://localhost:7227/api/Projects?id=e9246e04-1505-4d1b-8651-3fe383d6ddcb");
-    //https://localhost:7227/api/Projects?id=0cbb346c-2bc6-4f5c-926c-78756c32f77f
-    console.log(id + " deleted");
-    this.http .delete(deleteUrl);
-    //const options = {
-    //  headers: new HttpHeaders({
-    //    'Content-Type': 'application/json',
-    //  }),
-    //  body: {
-    //    id: id,
-    //  },
-    //};
 
-    //this.http
-    //  .delete(projectsURL, options)
-    //  .subscribe((s) => {
-    //    console.log(s);
-    //  });
+    const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+  };
    
+    this.http.delete(deleteUrl, httpOptions)
+
+      .pipe()
+      .subscribe(
+
+        data => {
+          console.log(data);
+        });
+   
+
+      ; // subscribe was solution - again
+
+    console.log(id + " deleted");
+
+    return this.http.delete<Project>(deleteUrl, httpOptions).pipe(
+    //  tap(_ => this.log(`deleted hero id=${id}`)),
+    //  catchError(this.handleError<Hero>('deleteHero'))
+    );
+  }
+
+  testDelete(id: number): Observable<JSON> {
+    const deleteUrl = `${projectsURL}?id=${id}`;
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+
+    const req = this.http.delete<JSON>(deleteUrl, httpOptions);
+ 
+     
+
+    console.log(id + " deleted");
+
+    req.subscribe();
+    // 1 request made.
+    req.subscribe();
+    // 2 requests made.
+
+    this.refresh();
+    return req;
   }
 
   testGetMethod() { 

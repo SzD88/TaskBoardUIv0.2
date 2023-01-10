@@ -1,13 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.angular",
     "\\src",
     "\\src\\app",
     "\\src\\app\\entities",
     "\\src\\app\\project-detail",
     "\\src\\app\\projects",
-    "\\src\\app\\services"
+    "\\src\\app\\services",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\services\\projects.service.ts",
   "PreviewInSolutionExplorer": false
 }
