@@ -15,7 +15,7 @@ import { ProjectService } from '../services/projects.service';
 export class ProjectDetailComponent {
 
   changedProject?: Project;
-   
+
   @Input() project?: Project; // to jest powiazane z selected project
 
   constructor(private projectService: ProjectService,
@@ -30,7 +30,7 @@ export class ProjectDetailComponent {
     const url = this.route.snapshot.paramMap.get('');
   }
 
-  overrideProject(id: string, projectNumber: string, title: string, description: string, completed: boolean) { 
+  overrideProject(id: string, projectNumber: string, title: string, description: string, completed: boolean) {
   }
 
   onChangesSubmited(project: Project): void {
@@ -39,19 +39,24 @@ export class ProjectDetailComponent {
 
   }
 
-  addNewAsCurrent(project: Project): void { 
-    var jsn = JSON.stringify(this.project);  
+  addNewAsCurrent(project: Project): void {
+    var jsn = JSON.stringify(this.project);
     this.projectService.addProject(JSON.parse(jsn));
   }
 
-  //deleteCurrentProject(id: number): Observable<boolean> {
-  //  var cos = this.projectService.deleteProject(id);
+  deleteCurrentProject(id: number) { //  Observable<boolean> {
+  //  this.projectService.deleteProject(id);
 
-   
-   //  this.router.navigate(['/projects' ]);
-   // this.router.navigate(['/projects', { id: heroId }]);
+    this.projectService.deleteProject(id).subscribe(() => {
+    //   window.location.reload();
+      window.location.href = "http://localhost:4200/";
+    })
 
   }
-  
- 
- 
+  //  this.router.navigate(['/projects' ]);
+  // this.router.navigate(['/projects', { id: heroId }]);
+
+
+
+
+}

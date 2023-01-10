@@ -87,7 +87,7 @@ export class ProjectService {
         return req;
   }
 
-  deleteProject(id: number) : void  {
+  deleteProject(id: number): Observable<Project>  {
     const deleteUrl = `${projectsURL}?id=${id}`;
 
     const httpOptions = {
@@ -109,7 +109,11 @@ export class ProjectService {
       ; // subscribe was solution - again
 
     console.log(id + " deleted");
-     
+
+    return this.http.delete<Project>(deleteUrl, httpOptions).pipe(
+    //  tap(_ => this.log(`deleted hero id=${id}`)),
+    //  catchError(this.handleError<Hero>('deleteHero'))
+    );
   }
 
   testDelete(id: number): Observable<JSON> {
