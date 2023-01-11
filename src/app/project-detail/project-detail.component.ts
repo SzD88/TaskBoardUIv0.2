@@ -12,7 +12,11 @@ import { ProjectService } from '../services/projects.service';
   templateUrl: './project-detail.component.html',
   styleUrls: ['./project-detail.component.css']
 })
-export class ProjectDetailComponent {
+
+
+
+export class ProjectDetailComponent
+{
 
   changedProject?: Project;
 
@@ -26,9 +30,7 @@ export class ProjectDetailComponent {
   ) { }
 
   ngOnInit() {
-    const heroId = this.route.snapshot.paramMap.get('id');
 
-    const url = this.route.snapshot.paramMap.get('');
   }
 
   overrideProject(id: string, projectNumber: string, title: string, description: string, completed: boolean) {
@@ -46,24 +48,24 @@ export class ProjectDetailComponent {
   }
 
   deleteCurrentProject(id: number) { //  Observable<boolean> {
-  //  this.projectService.deleteProject(id);
+    //  this.projectService.deleteProject(id);
 
-   // this.subscription =
+    // this.subscription =
     this.projectService.testDelete(id).subscribe(() => {
 
-    //  this.projects.ngOnInit();
+      //  this.projects.ngOnInit();
 
-   //   this.projectService.refresh();
-    }) 
-   // window.location.href = "http://localhost:4200/";
+      //   this.projectService.refresh();
+    })
+    // window.location.href = "http://localhost:4200/";
     //if (this.subscription)
     //  this.subscription.unsubscribe();
 
 
-    
+
   }
   //  this.router.navigate(['/projects' ]);
-  // this.router.navigate(['/projects', { id: heroId }]);
+   
 
 
 

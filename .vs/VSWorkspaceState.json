@@ -1,15 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.angular",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\entities",
+    "\\src\\app\\project-create",
     "\\src\\app\\project-detail",
     "\\src\\app\\projects",
-    "\\src\\app\\services",
-    "\\src\\assets"
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\project-detail\\project-detail.component.html",
+  "SelectedNode": "\\src\\app\\project-create\\project-create.component.html",
   "PreviewInSolutionExplorer": false
 }

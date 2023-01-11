@@ -38,22 +38,20 @@ export class ProjectService {
 
  
   // was getData
-  //getAllProjects() {
-
-  //  return this.http.get(projectsURL);
-
+  //getAllProjects() { 
+  //  return this.http.get(projectsURL); 
   //}
-
-  getAllProjects(): Observable<Project[]> {
-
-    var projects = this.http.get<Project[]>(projectsURL);
-    return projects;
-
+  postProject(project: Project): Observable<Project> {
+    return this.http.post<Project>( projectsURL, project ).pipe(
+      
+    );
   }
-  refresh() {
-
-    window.location.href = mainURL;
-
+  getAllProjects(): Observable<Project[]> { 
+    var projects = this.http.get<Project[]>(projectsURL);
+    return projects; 
+  }
+  refresh() { 
+    window.location.href = mainURL; 
   }
 
   updateProject(enter: JSON): Observable<JSON> { 
@@ -88,8 +86,7 @@ export class ProjectService {
         req.subscribe();
         // 1 request made.
         req.subscribe();
-        // 2 requests made.
-
+        // 2 requests made. 
         return req;
   }
 
@@ -100,48 +97,32 @@ export class ProjectService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     })
-  };
-   
-    this.http.delete(deleteUrl, httpOptions)
-
+  }; 
+    this.http.delete(deleteUrl, httpOptions) 
       .pipe()
-      .subscribe(
-
+      .subscribe( 
         data => {
           console.log(data);
-        });
-   
-
-      ; // subscribe was solution - again
-
-    console.log(id + " deleted");
-
+        }); 
+    console.log(id + " deleted"); 
     return this.http.delete<Project>(deleteUrl, httpOptions).pipe(
-    //  tap(_ => this.log(`deleted hero id=${id}`)),
-    //  catchError(this.handleError<Hero>('deleteHero'))
+    
     );
   }
 
   testDelete(id: number): Observable<JSON> {
-    const deleteUrl = `${projectsURL}?id=${id}`;
-
+    const deleteUrl = `${projectsURL}?id=${id}`; 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       })
-    };
-
-    const req = this.http.delete<JSON>(deleteUrl, httpOptions);
- 
-     
-
-    console.log(id + " deleted");
-
+    }; 
+    const req = this.http.delete<JSON>(deleteUrl, httpOptions); 
+    console.log(id + " deleted"); 
     req.subscribe();
     // 1 request made.
     req.subscribe();
-    // 2 requests made.
-
+    // 2 requests made. 
     this.refresh();
     return req;
   }
