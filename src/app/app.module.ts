@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { ProjectCreateComponent } from './project-create/project-create.component'; // <-- NgModel lives here
+import { ProjectCreateComponent } from './project-create/project-create.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,6 @@ import { ProjectCreateComponent } from './project-create/project-create.componen
     ProjectDetailComponent,
     MessagesComponent,
     ProjectCreateComponent,
-    ProjectCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +34,8 @@ import { ProjectCreateComponent } from './project-create/project-create.componen
     ])
 
   ],
-  providers: [],
+  providers: [ProjectsComponent,  
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

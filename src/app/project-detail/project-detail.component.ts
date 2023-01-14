@@ -47,27 +47,8 @@ export class ProjectDetailComponent
     this.projectService.addProject(JSON.parse(jsn));
   }
 
-  deleteCurrentProject(id: number) { //  Observable<boolean> {
-    //  this.projectService.deleteProject(id);
-
-    // this.subscription =
-    this.projectService.testDelete(id).subscribe(() => {
-
-      //  this.projects.ngOnInit();
-
-      //   this.projectService.refresh();
-    })
-    // window.location.href = "http://localhost:4200/";
-    //if (this.subscription)
-    //  this.subscription.unsubscribe();
-
-
-
-  }
-  //  this.router.navigate(['/projects' ]);
-   
-
-
-
-
+  deleteCurrentProject(id: number) {  
+    this.projectService.testDelete(id).subscribe(() => { 
+    }) 
+  }  
 }

@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Project } from '../entities/Project';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CreateProject } from '../entities/CreateProject';
 import { ProjectsComponent } from '../projects/projects.component';
 import { ProjectService } from '../services/projects.service';
 
@@ -12,9 +11,7 @@ import { ProjectService } from '../services/projects.service';
   styleUrls: ['./project-create.component.css']
 })
 
- 
-
-
+  
 export class ProjectCreateComponent {
 
   constructor(private projectService: ProjectService,
@@ -23,20 +20,21 @@ export class ProjectCreateComponent {
     private projects: ProjectsComponent,
 
   ) { }
-
-
-  newProject!: Project;
-
-
-  createProject(projectNumber: string, title: string, description: string ) {
-     
-    this.newProject.projectNumber = projectNumber;
-    this.newProject.title  = title;
-    this.newProject.description = description;
-     
-    this.projectService.postProject(this.newProject);
-  }
+ 
+  newProject: CreateProject = new CreateProject();
    
+  createProject1(pn: string, tt: string, ds: string) { 
+    console.log(tt);
+    this.newProject.projectNumber = pn;
+    this.newProject.title  = tt;
+    this.newProject.description = ds;
+
+    console.log(this.newProject);
+
+    var jsn = JSON.stringify(this.newProject);
+    this.projectService.addProject(JSON.parse(jsn));
+  }
+    
 }
 
 function ngOnInit() {

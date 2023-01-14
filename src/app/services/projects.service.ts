@@ -42,8 +42,7 @@ export class ProjectService {
   //  return this.http.get(projectsURL); 
   //}
   postProject(project: Project): Observable<Project> {
-    return this.http.post<Project>( projectsURL, project ).pipe(
-      
+    return this.http.post<Project>( projectsURL, project ).pipe( 
     );
   }
   getAllProjects(): Observable<Project[]> { 
@@ -85,7 +84,7 @@ export class ProjectService {
         // 0 requests made - .subscribe() not called.
         req.subscribe();
         // 1 request made.
-        req.subscribe();
+      //  req.subscribe();
         // 2 requests made. 
         return req;
   }

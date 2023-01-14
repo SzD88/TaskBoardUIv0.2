@@ -1,39 +1,22 @@
 <div>
   <label for="new-project">Project number: </label>
-  <input id="new-project" #projectNumber />  <!--to jest zmienna    -->
+  <input id="new-project" #projectNumber />
+  <br />
   <label for="new-project">Project title: </label>
-  <input id="new-project" #projectName />  <!--to jest zmienna    -->
+  <input id="new-project" #projectName />
+  <br />
+
   <label for="new-project">Project description: </label>
-  <input id="new-project" #projectDescription />  <!--to jest zmienna  projectNumber: string, title: string, description: string   -->
-  <!--<input id="project-projectNumber" [(ngModel)]="newProject.projectNumber" placeholder="">-->
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button type="button" class="add-button" (click)="createProject
+  <input id="new-project" #projectDescription />
+  <br />
+
+  <button type="button" class="add-button" (click)="createProject1
           (projectNumber.value,projectName.value,projectDescription.value) ">
-    Add zz
+    Create Project
   </button>
 </div>
-
-
-  <!--<div>
-    <label for="project-projectNumber">Project number: </label>
-    <input id="project-projectNumber" [(ngModel)]="newProject.projectNumber" placeholder="projectNumber">
-    <br />
-    <label for="project-name">   Project title:    </label>
-    <input id="project-title" [(ngModel)]="newProject.title" placeholder="title">
-    <br />
-    <label for="project-description">Project description: </label>
-    <input id="project-description" [(ngModel)]="newProject.description" placeholder="description">
-  
  
-    <br />
-    <button routerLink="/create" type="button" (click)="createProject((newProject))">
-      <span class="crud">CREATE</span>
 
 
-
-    </button>
-   
-
-  </div>-->
-
+ 
 

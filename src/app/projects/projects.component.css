@@ -58,8 +58,10 @@
     line-height: 0em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+    width: 60px;
   }
 
   .projects .title {
     align-self: center;
+    width:fit-content;
   }
