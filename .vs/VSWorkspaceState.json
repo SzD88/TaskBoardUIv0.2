@@ -5,11 +5,12 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\entities",
-    "\\src\\app\\messages",
     "\\src\\app\\project-create",
     "\\src\\app\\project-detail",
     "\\src\\app\\projects",
-    "\\src\\app\\services"
+    "\\src\\app\\services",
+    "\\src\\assets"
   ],
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }
