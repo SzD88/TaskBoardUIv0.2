@@ -10,14 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
-import { MessagesComponent } from './messages/messages.component'; // <-- NgModel lives here
+import { MessagesComponent } from './messages/messages.component';
+import { ProjectCreateComponent } from './project-create/project-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectsComponent,
     ProjectDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    ProjectCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,11 +29,13 @@ import { MessagesComponent } from './messages/messages.component'; // <-- NgMode
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: ProjectDetailComponent },
+      { path: 'create', component: ProjectCreateComponent },
     
     ])
 
   ],
-  providers: [],
+  providers: [ProjectsComponent,  
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

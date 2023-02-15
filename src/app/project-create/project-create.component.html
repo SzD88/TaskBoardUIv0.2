@@ -1,0 +1,22 @@
+<div>
+  <label for="new-project">Project number: </label>
+  <input id="new-project" #projectNumber />
+  <br />
+  <label for="new-project">Project title: </label>
+  <input id="new-project" #projectName />
+  <br />
+
+  <label for="new-project">Project description: </label>
+  <input id="new-project" #projectDescription />
+  <br />
+
+  <button type="button" class="add-button" (click)="createProject1
+          (projectNumber.value,projectName.value,projectDescription.value) ">
+    Create Project
+  </button>
+</div>
+ 
+
+
+ 
+

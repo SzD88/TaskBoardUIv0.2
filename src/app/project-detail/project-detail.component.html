@@ -15,11 +15,8 @@
     <label for="project-description">Project description: </label>
     <input id="project-description" [(ngModel)]="project.description" placeholder="description">
     <br />
-
-
-    <label for="project-projectNumber">Project number: </label>
-    <input id="project-projectNumber" [(ngModel)]="project.projectNumber" placeholder="projectNumber">
-    <br />
+  
+ 
 
     <div>Last modified: {{project.lastModifiedDate |  date:'short' }}</div>
 
@@ -33,36 +30,6 @@
       <span class="crud">DELETE</span>
     </button>
     <br />
-    <br />
-    <button routerLink="/projects" type="button" (click)="addNewAsCurrent((project))">
-      <span class="crud">CREATE</span>
+  
     
-       
-      
-    </button>
-    <!--<div>
-  <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />-->
-    <!-- (click) passes input value to add() and then clears the input -->
-    <!--<button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
-      Add hero
-    </button>
-      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "projectNumber": "string",
-  "title": "string",
-  "description": "string",
-  "completed": true
-  </div>-->
-    <!--<some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element>-->
-
-  </div>
-</div>
-
-
- <!--"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "projectNumber": "string",
-  "title": "string",
-  "description": "string",
-  "completed": true,
-  "creationDate": "2023-01-02T17:36:43.388Z",
-  "lastModifiedDate": "2023-01-02T17:36:43.388Z",-->
+ 
