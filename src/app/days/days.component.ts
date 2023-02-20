@@ -5,12 +5,12 @@ import { MessageService } from '../services/message.service';
 
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css'],
+  selector: 'app-days',
+  templateUrl: './days.component.html',
+  styleUrls: ['./days.component.css'],
 })
 
-export class ProjectsComponent implements OnInit {
+export class DaysComponent implements OnInit {
 
   myData: any;
   selectedProject?: Day;

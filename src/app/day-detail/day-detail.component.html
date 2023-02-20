@@ -1,33 +1,34 @@
-<div *ngIf="project">
+<div *ngIf="day">
   <h2>Szczegóły dnia</h2>
-  <div>id: {{project.id}}</div>
+  <div>id: {{day.id}}</div>
  
 
-  <div *ngIf="project.completed"> Completed  </div>
+  <div *ngIf="day.completed"> Completed  </div>
 
   <div>
-    
+
     <label for="project-name">Opis dnia:    </label>
-    <input id="project-title" [(ngModel)]="project.title" placeholder="title">
+    <input id="project-title" [(ngModel)]="day.title" placeholder="title">
     <br />
     <label for="project-description">Dodatkowe informacje: </label>
-    <input id="project-description" [(ngModel)]="project.description" placeholder="description">
+    <input id="project-description" [(ngModel)]="day.description" placeholder="description">
     <br />
-  
- 
 
-    <div>Last modified: {{project.lastModifiedDate |  date:'short' }}</div>
+    <button type="button" (click)="getCurrentDay((day.id))">
+      <span class="crud">testget</span>
+    </button>
 
-
-    <button type="button" (click)="onChangesSubmited((project))">
+    <button type="button" (click)="onChangesSubmited((day))">
       <span class="crud">SUBMIT CHANGES</span>
     </button>
 
 
-    <button type="button" (click)="deleteCurrentProject((project.id))">
+    <button type="button" (click)="deleteCurrentDay((day.id))">
       <span class="crud">DELETE</span>
     </button>
     <br />
-  
-    
- 
+
+
+
+    </div>
+  </div>

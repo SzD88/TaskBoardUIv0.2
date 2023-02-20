@@ -7,13 +7,14 @@ import { catchError, delay, retry } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
 import { MessageService } from './message.service';
 import { Router, Routes } from '@angular/router';
+import { Task } from '../entities/Task';
 ///
  
 export class AppModule {
 
 }
 ////
-const daysUrl = 'https://localhost:7227/api/days';
+const tasksUrl = 'https://localhost:7227/api/tasks';
 
 const mainURL = 'http://localhost:4200/';
 
@@ -21,8 +22,8 @@ const mainURL = 'http://localhost:4200/';
 @Injectable({
     providedIn: 'root'
 })
-export class DaysService {
-  items: Day[] = [];
+export class TasksService {
+  items: Task[] = [];
 
   refresh$ = new BehaviorSubject<boolean>(true);
 
@@ -41,27 +42,19 @@ export class DaysService {
   //getAllProjects() { 
   //  return this.http.get(projectsURL); 
   //}
-  postDay(project: Day): Observable<Day> {
-    return this.http.post<Day>( daysUrl, project ).pipe( 
+  postProject(task: Task): Observable<Task> {
+    return this.http.post<Task>( tasksUrl, task ).pipe( 
     );
   }
-  getAllDays(): Observable<Day[]> { 
-    var projects = this.http.get<Day[]>(daysUrl);
+  getAllProjects(): Observable<Day[]> { 
+    var projects = this.http.get<Day[]>(tasksUrl);
     return projects; 
   }
   refresh() { 
     window.location.href = mainURL; 
   }
 
-  getDayById(id: number): Observable<Day> {
-    let urlWithId = daysUrl + "/" + id
-
-    var day = this.http.get<Day>(urlWithId);
-    return day;
-  }
- 
-
-  updateDay(enter: JSON): Observable<JSON> { 
+  updateProject(enter: JSON): Observable<JSON> { 
     console.log(enter); 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -69,7 +62,7 @@ export class DaysService {
         //  Authorization: 'my-auth-token'
       })
     };
-    const url = daysUrl;  
+    const url = tasksUrl;  
     const req = this.http.put<JSON>(url, enter, httpOptions);
     // 0 requests made - .subscribe() not called.
     req.subscribe();
@@ -79,7 +72,7 @@ export class DaysService {
     return req;
   }
    
-    addDay(enter: JSON): Observable<JSON> { 
+    addProject(enter: JSON): Observable<JSON> { 
         console.log(enter); 
         const httpOptions = {
             headers: new HttpHeaders({
@@ -87,7 +80,7 @@ export class DaysService {
               //  Authorization: 'my-auth-token'
             })
         }; 
-        const url = daysUrl; 
+        const url = tasksUrl; 
         const req = this.http.post<JSON>(url, enter, httpOptions);
         // 0 requests made - .subscribe() not called.
         req.subscribe();
@@ -97,8 +90,8 @@ export class DaysService {
         return req;
   }
 
-  deleteDay(id: number): Observable<Day>  {
-    const deleteUrl = `${daysUrl}?id=${id}`;
+  deleteProject(id: number): Observable<Day>  {
+    const deleteUrl = `${tasksUrl}?id=${id}`;
 
     const httpOptions = {
     headers: new HttpHeaders({
@@ -118,7 +111,7 @@ export class DaysService {
   }
 
   testDelete(id: number): Observable<JSON> {
-    const deleteUrl = `${daysUrl}?id=${id}`; 
+    const deleteUrl = `${tasksUrl}?id=${id}`; 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -145,7 +138,7 @@ export class DaysService {
         withCredentials?: boolean,
       },
       id: string,
-    }[]>(daysUrl);
+    }[]>(tasksUrl);
 
     return cos;
   }

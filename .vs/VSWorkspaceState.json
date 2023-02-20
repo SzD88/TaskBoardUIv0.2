@@ -1,7 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.angular",
     "\\src",
     "\\src\\app",
     "\\src\\app\\day-create",
@@ -9,8 +8,9 @@
     "\\src\\app\\entities",
     "\\src\\app\\messages",
     "\\src\\app\\projects",
-    "\\src\\app\\services"
+    "\\src\\app\\services",
+    "\\src\\app\\tasks-list"
   ],
-  "SelectedNode": "\\src\\app\\day-create\\day-create.component.html",
+  "SelectedNode": "\\src\\app\\day-detail\\day-detail.component.ts",
   "PreviewInSolutionExplorer": false
 }

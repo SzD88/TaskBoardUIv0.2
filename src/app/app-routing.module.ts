@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { ProjectsComponent } from './projects/projects.component';
+import { DaysComponent } from './days/days.component';
 import { DayCreateComponent } from './day-create/day-create.component';
 
 
 const routes: Routes = [
-  { path: 'projects', component: ProjectsComponent },
+  { path: 'projects', component: DaysComponent },
   { path: 'create', component: DayCreateComponent }
 ];
 

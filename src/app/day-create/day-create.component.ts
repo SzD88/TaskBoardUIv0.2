@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CreateDay } from '../entities/CreateProject';
-import { ProjectsComponent } from '../projects/projects.component';
+import { CreateDay } from '../entities/CreateDay';
+import { DaysComponent } from '../days/days.component';
 import { DaysService } from '../services/days.service';
 
 
@@ -17,7 +17,7 @@ export class DayCreateComponent {
   constructor(private projectService: DaysService,
     private router: Router,
     private route: ActivatedRoute,
-    private projects: ProjectsComponent,
+    private projects: DaysComponent,
 
   ) { }
  
@@ -32,7 +32,7 @@ export class DayCreateComponent {
     console.log(this.newProject);
 
     var jsn = JSON.stringify(this.newProject);
-    this.projectService.addProject(JSON.parse(jsn));
+    this.projectService.addDay(JSON.parse(jsn));
   }
     
 }

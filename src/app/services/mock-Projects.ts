@@ -1,7 +1,7 @@
-import { Project } from '../entities/Project';
+import { Day } from '../entities/Project';
 import { Task } from '../entities/Task';
 
-export const PROJECTS: Project[] = [
+export const PROJECTS: Day[] = [
   
   //{
   //  id: 1,

@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
-import { Project } from '../entities/Project';
-import { ProjectsComponent } from '../projects/projects.component';
+import { Day } from '../entities/Day';
+import { DaysComponent } from '../days/days.component';
 import { DaysService } from '../services/days.service';
 
 
@@ -18,37 +18,40 @@ import { DaysService } from '../services/days.service';
 export class DayDetailComponent
 {
 
-  changedProject?: Project;
+  changedProject?: Day;
 
-  @Input() project?: Project; // to jest powiazane z selected project
+  @Input() day?: Day; // to jest powiazane z selected project
 
-  constructor(private projectService: DaysService,
+  constructor(private daysService: DaysService,
     private router: Router,
     private route: ActivatedRoute,
-    private projects: ProjectsComponent,
+    private projects: DaysComponent,
 
   ) { }
 
   ngOnInit() {
+   
+  }
+
+  overrideDay(id: string, projectNumber: string, title: string, description: string, completed: boolean) {
+  }
+
+  onChangesSubmited(project: Day): void {
+    var jsn = JSON.stringify(this.day);
+    this.daysService.updateDay(JSON.parse(jsn));
 
   }
 
-  overrideProject(id: string, projectNumber: string, title: string, description: string, completed: boolean) {
+  addNewAsCurrent(project: Day): void {
+    var jsn = JSON.stringify(this.day);
+    this.daysService.addDay(JSON.parse(jsn));
   }
-
-  onChangesSubmited(project: Project): void {
-    var jsn = JSON.stringify(this.project);
-    this.projectService.updateProject(JSON.parse(jsn));
-
+  getCurrentDay(id: number) {
+   return this.daysService.getDayById(this.day!.id).subscribe(() => {
+    })
   }
-
-  addNewAsCurrent(project: Project): void {
-    var jsn = JSON.stringify(this.project);
-    this.projectService.addProject(JSON.parse(jsn));
-  }
-
-  deleteCurrentProject(id: number) {  
-    this.projectService.testDelete(id).subscribe(() => { 
+  deleteCurrentDay(id: number) {  
+    this.daysService.testDelete(id).subscribe(() => { 
     }) 
   }  
 }

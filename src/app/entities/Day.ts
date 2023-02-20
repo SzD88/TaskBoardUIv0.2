@@ -1,6 +1,6 @@
 import { Task } from "./Task";
 
-export interface Project {
+export interface Day {
   id: number;
   projectNumber: string;
   title: string;
