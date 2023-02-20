@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../entities/Project';
-import { ProjectService } from '../services/projects.service';
+import { DaysService } from '../services/days.service';
 import { MessageService } from '../services/message.service';
 
 
@@ -15,7 +15,7 @@ export class ProjectsComponent implements OnInit {
   myData: any;
   selectedProject?: Project;
 
-  constructor(private projectService: ProjectService, private messageService: MessageService) { }
+  constructor(private projectService: DaysService, private messageService: MessageService) { }
 
 
   ngOnInit(): void { 

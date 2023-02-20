@@ -1,18 +1,16 @@
 <div *ngIf="project">
-  <h2>{{project.projectNumber | uppercase}} details</h2>
+  <h2>Szczegóły dnia</h2>
   <div>id: {{project.id}}</div>
  
 
   <div *ngIf="project.completed"> Completed  </div>
 
   <div>
-    <label for="project-projectNumber">Project number: </label>
-    <input id="project-projectNumber" [(ngModel)]="project.projectNumber" placeholder="projectNumber">
-    <br />
-    <label for="project-name">   Project title:    </label>
+    
+    <label for="project-name">Opis dnia:    </label>
     <input id="project-title" [(ngModel)]="project.title" placeholder="title">
     <br />
-    <label for="project-description">Project description: </label>
+    <label for="project-description">Dodatkowe informacje: </label>
     <input id="project-description" [(ngModel)]="project.description" placeholder="description">
     <br />
   

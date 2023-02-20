@@ -1,27 +1,27 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CreateProject } from '../entities/CreateProject';
+import { CreateDay } from '../entities/CreateProject';
 import { ProjectsComponent } from '../projects/projects.component';
-import { ProjectService } from '../services/projects.service';
+import { DaysService } from '../services/days.service';
 
 
 @Component({
-  selector: 'app-project-create',
-  templateUrl: './project-create.component.html',
-  styleUrls: ['./project-create.component.css']
+  selector: 'app-day-create',
+  templateUrl: './day-create.component.html',
+  styleUrls: ['./day-create.component.css']
 })
 
   
-export class ProjectCreateComponent {
+export class DayCreateComponent {
 
-  constructor(private projectService: ProjectService,
+  constructor(private projectService: DaysService,
     private router: Router,
     private route: ActivatedRoute,
     private projects: ProjectsComponent,
 
   ) { }
  
-  newProject: CreateProject = new CreateProject();
+  newProject: CreateDay = new CreateDay();
    
   createProject1(pn: string, tt: string, ds: string) { 
     console.log(tt);

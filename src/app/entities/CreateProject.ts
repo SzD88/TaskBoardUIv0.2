@@ -1,5 +1,5 @@
 
-export class CreateProject {
+export class CreateDay {
  
   projectNumber: string | undefined;
   title: string | undefined;

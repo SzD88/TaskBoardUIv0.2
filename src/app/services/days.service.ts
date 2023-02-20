@@ -13,15 +13,15 @@ export class AppModule {
 
 }
 ////
-const projectsURL = 'https://localhost:7227/api/Projects';
+const daysUrl = 'https://localhost:7227/api/days';
 
-const mainURL = 'http://localhost:4202/';
+const mainURL = 'http://localhost:4200/';
 
 
 @Injectable({
     providedIn: 'root'
 })
-export class ProjectService {
+export class DaysService {
   items: Project[] = [];
 
   refresh$ = new BehaviorSubject<boolean>(true);
@@ -42,11 +42,11 @@ export class ProjectService {
   //  return this.http.get(projectsURL); 
   //}
   postProject(project: Project): Observable<Project> {
-    return this.http.post<Project>( projectsURL, project ).pipe( 
+    return this.http.post<Project>( daysUrl, project ).pipe( 
     );
   }
   getAllProjects(): Observable<Project[]> { 
-    var projects = this.http.get<Project[]>(projectsURL);
+    var projects = this.http.get<Project[]>(daysUrl);
     return projects; 
   }
   refresh() { 
@@ -61,7 +61,7 @@ export class ProjectService {
         //  Authorization: 'my-auth-token'
       })
     };
-    const url = projectsURL;  
+    const url = daysUrl;  
     const req = this.http.put<JSON>(url, enter, httpOptions);
     // 0 requests made - .subscribe() not called.
     req.subscribe();
@@ -79,7 +79,7 @@ export class ProjectService {
               //  Authorization: 'my-auth-token'
             })
         }; 
-        const url = projectsURL; 
+        const url = daysUrl; 
         const req = this.http.post<JSON>(url, enter, httpOptions);
         // 0 requests made - .subscribe() not called.
         req.subscribe();
@@ -90,7 +90,7 @@ export class ProjectService {
   }
 
   deleteProject(id: number): Observable<Project>  {
-    const deleteUrl = `${projectsURL}?id=${id}`;
+    const deleteUrl = `${daysUrl}?id=${id}`;
 
     const httpOptions = {
     headers: new HttpHeaders({
@@ -110,7 +110,7 @@ export class ProjectService {
   }
 
   testDelete(id: number): Observable<JSON> {
-    const deleteUrl = `${projectsURL}?id=${id}`; 
+    const deleteUrl = `${daysUrl}?id=${id}`; 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ export class ProjectService {
         withCredentials?: boolean,
       },
       id: string,
-    }[]>(projectsURL);
+    }[]>(daysUrl);
 
     return cos;
   }

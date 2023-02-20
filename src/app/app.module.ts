@@ -9,17 +9,19 @@ import { ProjectsComponent } from './projects/projects.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
-import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { DayDetailComponent } from './day-detail/day-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { ProjectCreateComponent } from './project-create/project-create.component';
+import { DayCreateComponent } from './day-create/day-create.component';
+import { DaysListComponent } from './days-list/days-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectsComponent,
-    ProjectDetailComponent,
+    DayDetailComponent,
     MessagesComponent,
-    ProjectCreateComponent,
+    DayCreateComponent,
+    DaysListComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,8 +30,8 @@ import { ProjectCreateComponent } from './project-create/project-create.componen
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProjectDetailComponent },
-      { path: 'create', component: ProjectCreateComponent },
+      { path: '', component: DayDetailComponent },
+      { path: 'create', component: DayCreateComponent },
     
     ])
 

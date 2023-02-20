@@ -3,26 +3,26 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { Project } from '../entities/Project';
 import { ProjectsComponent } from '../projects/projects.component';
-import { ProjectService } from '../services/projects.service';
+import { DaysService } from '../services/days.service';
 
 
 
 @Component({
-  selector: 'app-project-detail',
-  templateUrl: './project-detail.component.html',
-  styleUrls: ['./project-detail.component.css']
+  selector: 'app-day-detail',
+  templateUrl: './day-detail.component.html',
+  styleUrls: ['./day-detail.component.css']
 })
 
 
 
-export class ProjectDetailComponent
+export class DayDetailComponent
 {
 
   changedProject?: Project;
 
   @Input() project?: Project; // to jest powiazane z selected project
 
-  constructor(private projectService: ProjectService,
+  constructor(private projectService: DaysService,
     private router: Router,
     private route: ActivatedRoute,
     private projects: ProjectsComponent,
