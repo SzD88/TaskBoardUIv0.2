@@ -14,7 +14,9 @@ export class SubtaskViewComponent {
 
   dayImported? = this.detailComponent.day!.id.toString()
 
-     tasks : Task[] =  [];
+  tasks?: Task[] = [];
+
+ // mainTasks: [] as Task[];
 
   constructor(private detailComponent: DayDetailComponent) {
 

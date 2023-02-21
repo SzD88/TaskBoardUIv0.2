@@ -1,4 +1,4 @@
-import { Day } from '../entities/Project';
+import { Day } from '../entities/Day';
 import { Task } from '../entities/Task';
 
 export const PROJECTS: Day[] = [
