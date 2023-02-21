@@ -10,16 +10,26 @@
     <ul class="subTasksInsideDay">
       <li *ngFor="let cos of day.mainTasks">
 
-        
+        <!--<label for="name">  </label>-->
+        <!--<input id="subTaskContent" type="text" value="{{cos.content}}">-->
         {{setValue(cos.content)}}
- 
+
+        <!--<input [value]="cos.content"
+               (input)="cos.content=getValue($event)">-->
 
 
-        <input (keyup.enter)="onEnter(cos.content)" [(ngModel)]="name" #ctrl="ngModel" required>
+        <input [(ngModel)]="name" #ctrl="ngModel" required>
 
-       
+        <p>Value: {{ name }}</p>
 
-         
+        <!--<button (click)="setValue()">Set value</button>-->
+
+        <!--<input [value]="currentItem.name"
+   (input)="currentItem.name=getValue($event)">-->
+        <!--po prostu content?
+  {{ connectionMethod(cos.id)}}
+  <app-subtask-view></app-subtask-view>-->
+        <!--{{day.mainTasks[0].content}}-->
       </li>
     </ul>
     <!--<input type="text" id="createMainTaskInputValue" placeholder="Dodaj zadanie">-->

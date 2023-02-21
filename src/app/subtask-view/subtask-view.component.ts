@@ -16,11 +16,16 @@ export class SubtaskViewComponent {
 
   tasks?: Task[] = [];
 
+  task?: string;
+  taskId?: number;
+
  // mainTasks: [] as Task[];
 
   constructor(private detailComponent: DayDetailComponent) {
 
     this.tasks = detailComponent.day?.mainTasks;
+    this.task = this.tasks![1].content;
+    this.taskId = this.tasks![1].id;
 
   }
 
