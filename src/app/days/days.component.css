@@ -24,7 +24,10 @@
   border-color: #ccc;
 }
 
+/*.subTasksInsideBlockOfDays li {
 
+display:    table-row ;
+}*/
 
 .projects {
   margin: 0 0 2em 0;
