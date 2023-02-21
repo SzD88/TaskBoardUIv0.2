@@ -21,7 +21,8 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void { 
     this.projectService.getAllDays().subscribe((data) => {
       this.myData = data;
-
+      console.log("test");
+      console.log(this.myData);
     });
      
   }

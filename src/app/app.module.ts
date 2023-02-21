@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DayDetailComponent } from './day-detail/day-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { DayCreateComponent } from './day-create/day-create.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { TasksListComponent } from './tasks-list/tasks-list.component';
     DaysComponent,
     DayDetailComponent,
     MessagesComponent,
-    DayCreateComponent,
     TasksListComponent,
   ],
   imports: [
@@ -31,7 +29,7 @@ import { TasksListComponent } from './tasks-list/tasks-list.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: DayDetailComponent },
-      { path: 'create', component: DayCreateComponent },
+     // { path: 'create', component: DayCreateComponent },
     
     ])
 

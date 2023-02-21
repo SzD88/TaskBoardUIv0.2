@@ -18,7 +18,7 @@ import { DaysService } from '../services/days.service';
 export class DayDetailComponent
 {
 
-  changedProject?: Day;
+  changedDay?: Day;
 
   @Input() day?: Day; // to jest powiazane z selected project
 

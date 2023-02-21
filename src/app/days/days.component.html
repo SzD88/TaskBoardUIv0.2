@@ -1,13 +1,13 @@
  
 
-<app-day-detail [project]="selectedDay"></app-day-detail>
+<app-day-detail [day]="selectedDay"></app-day-detail>
 
 
 <h2>Dni: </h2>
 <ul class="projects">
-  <li *ngFor="let project of myData">
+  <li *ngFor="let day of myData">
 
-    <button [class.selected]="day === selectedDay" type="button" (click)="onSelect(dat)">
+    <button [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)">
       <span class="badge">{{day.projectNumber}}</span>
       <span class="title">{{day.title}}</span>
     </button>

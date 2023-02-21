@@ -3,12 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { DaysComponent } from './days/days.component';
-import { DayCreateComponent } from './day-create/day-create.component';
 
 
 const routes: Routes = [
   { path: 'projects', component: DaysComponent },
-  { path: 'create', component: DayCreateComponent }
+ // { path: 'create', component: DayCreateComponent }
 ];
 
 @NgModule({

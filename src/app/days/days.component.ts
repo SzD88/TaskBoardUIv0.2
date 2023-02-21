@@ -13,7 +13,7 @@ import { MessageService } from '../services/message.service';
 export class DaysComponent implements OnInit {
 
   myData: any;
-  selectedProject?: Day;
+  selectedDay?: Day;
 
   constructor(private projectService: DaysService, private messageService: MessageService) { }
 
@@ -25,9 +25,9 @@ export class DaysComponent implements OnInit {
     });
      
   }
-  onSelect(project: Day): void {
-    this.selectedProject = project;
-    this.messageService.add(`ProjectsService: Selected project number=${project.projectNumber}`);
+  onSelect(day: Day): void {
+    this.selectedDay = day;
+    this.messageService.add(`ProjectsService: Selected project number`);
   } 
 }
 
