@@ -3,14 +3,13 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\day-create",
     "\\src\\app\\day-detail",
+    "\\src\\app\\days",
     "\\src\\app\\entities",
     "\\src\\app\\messages",
-    "\\src\\app\\projects",
     "\\src\\app\\services",
     "\\src\\app\\tasks-list"
   ],
-  "SelectedNode": "\\src\\app\\projects\\projects.component.ts",
+  "SelectedNode": "\\src\\app\\days\\days.component.html",
   "PreviewInSolutionExplorer": false
 }
