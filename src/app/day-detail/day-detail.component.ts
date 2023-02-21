@@ -5,6 +5,8 @@ import { Day } from '../entities/Day';
 import { DaysComponent } from '../days/days.component';
 import { DaysService } from '../services/days.service';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
+import { TasksService } from '../services/tasks.service';
+import { Task } from '../entities/Task';
 
 
 @Component({
@@ -23,6 +25,7 @@ export class DayDetailComponent implements OnInit
   @Input() day?: Day; // to jest powiazane z selected project
 
   constructor(private daysService: DaysService,
+    private tasksService: TasksService,
     private router: Router,
     private route: ActivatedRoute,
     private projects: DaysComponent,
@@ -35,9 +38,23 @@ export class DayDetailComponent implements OnInit
   }
   ngOnInit() { 
   }
-  onEnter(enter:string) {
+  onEnter(contentToUpdate:string, id: number) {
     console.log("enter pressed");
+    console.log(contentToUpdate);
+    console.log(id);
+
+    const tsk: Task = {
+      id: id,
+      content: contentToUpdate,
+      completed: false,
+      levelAboveId: this.day!.id 
+    };
+    
+    var jsn = JSON.stringify(tsk)
+    this.tasksService.updateTask(JSON.parse(jsn));
+
   }
+  
   setValue(enter:string) {
      this.name = enter;
   }

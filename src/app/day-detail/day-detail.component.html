@@ -15,7 +15,7 @@
  
 
 
-        <input (keyup.enter)="onEnter(cos.content)" [(ngModel)]="name" #ctrl="ngModel" required>
+        <input #box (keyup.enter)="onEnter(box.value, cos.id)" [(ngModel)]="name" #ctrl="ngModel" required>
 
        
 

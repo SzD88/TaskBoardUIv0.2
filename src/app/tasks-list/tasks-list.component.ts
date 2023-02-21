@@ -20,11 +20,7 @@ export class TasksListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    //this.projectService.get().subscribe((data) => {
-    //  this.myData = data;
-
-    /* });*/
-
+ 
   }
 
 
