@@ -14,16 +14,18 @@
 
       </button>-->
        
-      <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)">
-        <span>{{day.dayDate | date:'shortDate' }}</span>
+    <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)">
+      <span>{{day.dayDate | date:'shortDate' }}</span>
 
 
-        <br />  
-        <span class="title">Zadanie 1</span>
-        <br />
-        <span class="title">Zadanie 2</span>
-        <br />
-      </div>
+      <ul class="subTasksInsideBlockOfDays">
+        <li *ngFor="let cos of day.mainTasks">
+
+          {{day.mainTasks[0].content}}
+
+        </li>
+      </ul>
+    </div>
   </li>
 </ul>
 
