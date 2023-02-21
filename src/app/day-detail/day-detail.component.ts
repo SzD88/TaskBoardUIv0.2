@@ -4,17 +4,12 @@ import { Observable, Subscription } from 'rxjs';
 import { Day } from '../entities/Day';
 import { DaysComponent } from '../days/days.component';
 import { DaysService } from '../services/days.service';
-
-
-
+ 
 @Component({
   selector: 'app-day-detail',
   templateUrl: './day-detail.component.html',
   styleUrls: ['./day-detail.component.css']
-})
-
-
-
+}) 
 export class DayDetailComponent
 {
 
@@ -47,8 +42,10 @@ export class DayDetailComponent
     this.daysService.addDay(JSON.parse(jsn));
   }
   getCurrentDay(id: number) {
-   return this.daysService.getDayById(this.day!.id).subscribe(() => {
-    })
+
+    console.log(this.day?.dayDate); // masz te id
+    console.log(this.day); // masz te id 
+    
   }
   deleteCurrentDay(id: number) {  
     this.daysService.testDelete(id).subscribe(() => { 
