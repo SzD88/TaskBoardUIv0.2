@@ -28,7 +28,7 @@ export class SubtaskViewComponent {
 
 
   updateName() {
-    this.name.setValue(this.detailComponent.day!.id.toString());
+    this.name.setValue(this.tasks![0].content.toString() );
     
   }
 
