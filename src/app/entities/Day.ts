@@ -6,6 +6,6 @@ export interface Day {
   title: string;
   description: string;
   completed: boolean;
-  lastModifiedDate: Date
+  mainTasks: Task[];
 }
 

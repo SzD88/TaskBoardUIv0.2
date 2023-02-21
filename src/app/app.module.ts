@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { DayDetailComponent } from './day-detail/day-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
+import { SubtaskViewComponent } from './subtask-view/subtask-view.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,12 @@ import { TasksListComponent } from './tasks-list/tasks-list.component';
     DayDetailComponent,
     MessagesComponent,
     TasksListComponent,
+    SubtaskViewComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     HttpClientModule,
-
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot([

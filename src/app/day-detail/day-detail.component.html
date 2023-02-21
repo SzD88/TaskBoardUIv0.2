@@ -1,34 +1,40 @@
 <div *ngIf="day">
   <h2>Szczegóły dnia</h2>
-  <div>id: {{day.id}}</div>
- 
+  <div>DATA: {{day.dayDate | date:'shortDate'}}</div>
 
-  <div *ngIf="day.completed"> Completed  </div>
+  <div>id: {{day.id}}</div>
+
 
   <div>
 
-    <label for="project-name">Opis dnia:    </label>
-    <input id="project-title" [(ngModel)]="day.title" placeholder="title">
-    <br />
-    <label for="project-description">Dodatkowe informacje: </label>
-    <input id="project-description" [(ngModel)]="day.description" placeholder="description">
-    <br />
+    <ul class="subTasksInsideDay">
+      <li *ngFor="let cos of day.mainTasks">
 
-    <button type="button" (click)="getCurrentDay(day.id)">
-      <span class="crud">GET SINGLE BY ItS ID</span>
-    </button>
+        <app-subtask-view></app-subtask-view>
+
+        <!--{{day.mainTasks[0].content}}-->
+      </li>
+    </ul>
+    <!--<input type="text" id="createMainTaskInputValue" placeholder="Dodaj zadanie">-->
+    <!--<div id="testo" class="offset-1 text-center" *ngFor="let more of inputs">
+      <input type="text" class="col-8 text-center" (keyup.enter)="addInput()">
+    </div>-->
+
+
+
+
 
     <button type="button" (click)="onChangesSubmited((day))">
-      <span class="crud">SUBMIT CHANGES</span>
+      <span class="crud">ZATWIERDZ ZMIANY</span>
     </button>
 
 
-    <button type="button" (click)="deleteCurrentDay((day.id))">
-      <span class="crud">DELETE</span>
+
+    <button type="button" (click)="getCurrentDay()">
+      <span class="crud">pobierz</span>
     </button>
-    <br />
 
 
 
-    </div>
   </div>
+</div>

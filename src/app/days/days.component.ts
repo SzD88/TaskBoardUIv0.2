@@ -15,6 +15,8 @@ export class DaysComponent implements OnInit {
   myData: any;
   selectedDay?: Day;
 
+ 
+
   constructor(private projectService: DaysService, private messageService: MessageService) { }
 
 
