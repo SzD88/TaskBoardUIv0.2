@@ -10,6 +10,6 @@
     "\\src\\app\\services",
     "\\src\\app\\subtask-view"
   ],
-  "SelectedNode": "\\src\\app\\subtask-view\\subtask-view.component.ts",
+  "SelectedNode": "\\src\\app\\subtask-view\\subtask-view.component.html",
   "PreviewInSolutionExplorer": false
 }
