@@ -18,3 +18,7 @@ button {
   background-color: #e6e6e6;
   left: .1em;
 }
+
+.subTasksInsideDay {
+  display:  flex ;
+}

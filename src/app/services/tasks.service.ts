@@ -14,7 +14,7 @@ export class AppModule {
 
 }
 ////
-const tasksUrl = 'https://localhost:7227/api/tasks';
+const tasksUrl = 'https://localhost:7227/api/subtasks';
 
 const mainURL = 'http://localhost:4200/';
 
@@ -26,11 +26,7 @@ export class TasksService {
   items: Task[] = [];
 
   refresh$ = new BehaviorSubject<boolean>(true);
-
-  //get deleteOperationSuccessfulEvent$(): Observable<boolean> {
-  //  return this._deleteOperationSuccessfulEvent$.asObservable();
-  //}
-
+ 
     constructor(
       private http: HttpClient,
       private messageService: MessageService,
@@ -38,23 +34,16 @@ export class TasksService {
     ) { }
 
  
-  // was getData
-  //getAllProjects() { 
-  //  return this.http.get(projectsURL); 
-  //}
-  postProject(task: Task): Observable<Task> {
+  
+  postTask(task: Task): Observable<Task> {
     return this.http.post<Task>( tasksUrl, task ).pipe( 
     );
   }
-  getAllProjects(): Observable<Day[]> { 
-    var projects = this.http.get<Day[]>(tasksUrl);
-    return projects; 
-  }
-  refresh() { 
-    window.location.href = mainURL; 
-  }
+ 
+ 
 
-  updateProject(enter: JSON): Observable<JSON> { 
+  updateTask(enter: JSON): Observable<JSON> { 
+    console.log("from task service:"); 
     console.log(enter); 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -68,7 +57,8 @@ export class TasksService {
     req.subscribe();
     // 1 request made.
     req.subscribe();
-    // 2 requests made. 
+    // 2 requests made.
+    //console.log(req);
     return req;
   }
    
@@ -109,6 +99,9 @@ export class TasksService {
     
     );
   }
+  refresh() {
+    window.location.href = mainURL;
+  }
 
   testDelete(id: number): Observable<JSON> {
     const deleteUrl = `${tasksUrl}?id=${id}`; 
@@ -123,7 +116,7 @@ export class TasksService {
     // 1 request made.
     req.subscribe();
     // 2 requests made. 
-    this.refresh();
+     this.refresh();
     return req;
   }
 

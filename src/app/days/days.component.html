@@ -6,22 +6,15 @@
 <h2>Dni: </h2>
 <ul class="projects">
   <li *ngFor="let day of myData">
-     
-      <!--<button [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)">
-
-        <span class="badge">{{day.dayDate}}</span>
-
-
-      </button>-->
-       
+      
     <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)">
-      <span>{{day.dayDate | date:'shortDate' }}</span>
+      <span>{{day.dayDate |  date:'d-MM-y' }}</span>
 
 
       <ul class="subTasksInsideBlockOfDays">
-        <li *ngFor="let cos of day.mainTasks">
-
-          {{day.mainTasks[0].content}}
+        <li class="subTasksInsideBlockOfDays" *ngFor="let cos of day.mainTasks">
+           
+          {{cos.content}}
 
         </li>
       </ul>

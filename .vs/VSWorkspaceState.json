@@ -8,8 +8,7 @@
     "\\src\\app\\entities",
     "\\src\\app\\messages",
     "\\src\\app\\services",
-    "\\src\\app\\subtask-view"
+    "\\src\\app\\tasks-list"
   ],
-  "SelectedNode": "\\src\\app\\subtask-view\\subtask-view.component.html",
   "PreviewInSolutionExplorer": false
 }

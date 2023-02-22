@@ -1,38 +1,25 @@
 <div *ngIf="day">
   <h2>Szczegóły dnia</h2>
-  <div>DATA: {{day.dayDate | date:'shortDate'}}</div>
+  <div>DATA: {{day.dayDate | date:'d-MM-y'}}</div>
 
   <div>id: {{day.id}}</div>
-
-
+   
   <div>
 
     <ul class="subTasksInsideDay">
-      <li *ngFor="let cos of day.mainTasks">
-
-        <app-subtask-view></app-subtask-view>
-
-        <!--{{day.mainTasks[0].content}}-->
+      <li class="subTasksInsideDay" *ngFor="let cos of day.mainTasks">
+         
+        {{setValue(cos.content)}}
+  
+        <input #box (keyup.enter)="onEnter(box.value, cos.id)" [(ngModel)]="name" #ctrl="ngModel" required>
+         
       </li>
     </ul>
-    <!--<input type="text" id="createMainTaskInputValue" placeholder="Dodaj zadanie">-->
-    <!--<div id="testo" class="offset-1 text-center" *ngFor="let more of inputs">
-      <input type="text" class="col-8 text-center" (keyup.enter)="addInput()">
-    </div>-->
+ 
 
 
-
-
-
-    <button type="button" (click)="onChangesSubmited((day))">
-      <span class="crud">ZATWIERDZ ZMIANY</span>
-    </button>
-
-
-
-    <button type="button" (click)="getCurrentDay()">
-      <span class="crud">pobierz</span>
-    </button>
+ 
+ 
 
 
 

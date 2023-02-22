@@ -1,0 +1,57 @@
+<div *ngIf="day">
+  <h2>Szczegóły dnia</h2>
+  <div>DATA: {{day.dayDate | date:'shortDate'}}</div>
+
+  <div>id: {{day.id}}</div>
+
+
+  <div>
+
+    <ul class="subTasksInsideDay">
+      <li *ngFor="let cos of day.mainTasks">
+
+        <!--<label for="name">  </label>-->
+        <!--<input id="subTaskContent" type="text" value="{{cos.content}}">-->
+        {{setValue(cos.content)}}
+
+        <!--<input [value]="cos.content"
+               (input)="cos.content=getValue($event)">-->
+
+
+        <input [(ngModel)]="name" #ctrl="ngModel" required>
+
+        <p>Value: {{ name }}</p>
+
+        <!--<button (click)="setValue()">Set value</button>-->
+
+        <!--<input [value]="currentItem.name"
+   (input)="currentItem.name=getValue($event)">-->
+        <!--po prostu content?
+  {{ connectionMethod(cos.id)}}
+  <app-subtask-view></app-subtask-view>-->
+        <!--{{day.mainTasks[0].content}}-->
+      </li>
+    </ul>
+    <!--<input type="text" id="createMainTaskInputValue" placeholder="Dodaj zadanie">-->
+    <!--<div id="testo" class="offset-1 text-center" *ngFor="let more of inputs">
+      <input type="text" class="col-8 text-center" (keyup.enter)="addInput()">
+    </div>-->
+
+
+
+
+
+    <button type="button" (click)="onChangesSubmited((day))">
+      <span class="crud">ZATWIERDZ ZMIANY</span>
+    </button>
+
+
+
+    <button type="button" (click)="getCurrentDay()">
+      <span class="crud">pobierz</span>
+    </button>
+
+
+
+  </div>
+</div>
