@@ -62,7 +62,7 @@ export class TasksService {
     return req;
   }
    
-    addProject(enter: JSON): Observable<JSON> { 
+    addTask(enter: JSON): Observable<JSON> { 
         console.log(enter); 
         const httpOptions = {
             headers: new HttpHeaders({

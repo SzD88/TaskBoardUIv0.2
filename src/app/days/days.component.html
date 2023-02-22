@@ -1,25 +1,26 @@
- 
+
 
 <app-day-detail [day]="selectedDay"></app-day-detail>
 
 
 <h2>Dni: </h2>
-<ul class="projects">
-  <li *ngFor="let day of myData">
-      
+<ul class="ulClass">
+  <li class="liClass" *ngFor="let day of myData">
+
     <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)">
       <span>{{day.dayDate |  date:'d-MM-y' }}</span>
 
 
-      <ul class="subTasksInsideBlockOfDays">
-        <li class="subTasksInsideBlockOfDays" *ngFor="let cos of day.mainTasks">
-           
-          {{cos.content}}
+      <div class="divClass2"> 
+  <li class="liClass2" *ngFor="let cos of day.mainTasks">
 
-        </li>
-      </ul>
+    <div class="box"> {{cos.content}} </div>
+
+    
+  </li>
+      </div>
     </div>
   </li>
 </ul>
 
-
+ 
