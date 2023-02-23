@@ -6,9 +6,9 @@
     "\\src\\app\\day-detail",
     "\\src\\app\\days",
     "\\src\\app\\entities",
-    "\\src\\app\\messages",
     "\\src\\app\\services",
     "\\src\\app\\tasks-list"
   ],
+  "SelectedNode": "\\src\\app\\days\\days.component.css",
   "PreviewInSolutionExplorer": false
 }
