@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AppSettings } from './AppSettings';
+
+const url = AppSettings.frontEndPoints;
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tablica zadań';
+
 }

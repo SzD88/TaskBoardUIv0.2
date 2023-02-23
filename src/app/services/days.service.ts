@@ -7,15 +7,18 @@ import { catchError, delay, retry } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
 import { MessageService } from './message.service';
 import { Router, Routes } from '@angular/router';
+import { AppSettings } from '../AppSettings';
 ///
  
 export class AppModule {
 
 }
 ////
-const daysUrl = 'https://localhost:7227/api/days';
+const daysUrl = AppSettings.backEndPoints + '/api/days';
+  //'https://localhost:7227/api/days';
 
-const mainURL = 'http://localhost:4200/';
+const mainURL = AppSettings.frontEndPoints;
+  //'http://localhost:4200/';
 
 
 @Injectable({
@@ -37,18 +40,22 @@ export class DaysService {
     ) { }
 
  
-  // was getData
-  //getAllProjects() { 
-  //  return this.http.get(projectsURL); 
-  //}
+   
   postDay(project: Day): Observable<Day> {
     return this.http.post<Day>( daysUrl, project ).pipe( 
     );
   }
   getAllDays(): Observable<Day[]> { 
-    var projects = this.http.get<Day[]>(daysUrl);
-    return projects; 
+    var days = this.http.get<Day[]>(daysUrl);
+    return days; 
   }
+
+  getWeekly(weeksAhead : number): Observable<Day[]> {
+    var days = this.http.get<Day[]>(daysUrl + "/weeksAhead/" + weeksAhead);
+    return days;
+  }
+
+
   refresh() { 
     window.location.href = mainURL; 
   }

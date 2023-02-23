@@ -21,8 +21,13 @@
   color: #333;
   background-color: #fff;
   border-color: #ccc;
-  max-width: 100%;
+  width: 150px;
   height: 200px;
+}
+
+.calendar {
+padding: 0;
+
 }
  span {
   font-size: 22px;
@@ -39,6 +44,8 @@
 }
 body {
 max-width: 100%;
+
+
 
 }
 .ulClass {
