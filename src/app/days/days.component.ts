@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Day } from '../entities/Day';
 import { DaysService } from '../services/days.service';
 import { MessageService } from '../services/message.service';
-
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-days',
@@ -11,7 +11,7 @@ import { MessageService } from '../services/message.service';
 })
 
 export class DaysComponent implements OnInit {
-
+  @Input() inputDate: any;
   myData: any;
   currentWeek: any;
   week1: any;
@@ -19,17 +19,16 @@ export class DaysComponent implements OnInit {
   week3: any;
   selectedDay?: Day;
 
-  dateToCheck: any;
-  currentDate = new Date().getUTCDate() ;
+  dateToCheck: Date;
+  currentDate = new Date()  ;
+   
+  constructor(private daysService: DaysService, private messageService: MessageService, public datepipe: DatePipe) {
 
- 
+    this.dateToCheck = new Date;
+     
+  }
 
-
-
-  constructor(private daysService: DaysService, private messageService: MessageService) { }
-
- 
-
+  
   ngOnInit(): void {
      
 
@@ -52,17 +51,25 @@ export class DaysComponent implements OnInit {
 
   }
   setDate(enter: Date) {
+
     this.dateToCheck = enter;
 
   }
   getColor() {
      
-    console.log(this.dateToCheck );
-    console.log(this.currentDate );
-    if (this.dateToCheck === this.currentDate) {
+    //console.log( typeof ( this.dateToCheck  )  );
+    //console.log( typeof ( this.currentDate.getUTCDate() ));
+    //console.log( this.dateToCheck );
+    //console.log(this.currentDate);
+
+    let date1 = this.datepipe.transform(this.dateToCheck, 'yyyy-MM-dd');
+    let date2 = this.datepipe.transform(this.currentDate, 'yyyy-MM-dd');
+    console.log(date1);
+    console.log(date2);
+     if ( date1 ===  date2) {
       return "red"; 
-    }
-    return "white";
+     }
+     return "white";
   }
 
   onSelect(day: Day): void {
