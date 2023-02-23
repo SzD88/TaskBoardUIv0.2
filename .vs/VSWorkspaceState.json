@@ -6,9 +6,9 @@
     "\\src\\app\\day-detail",
     "\\src\\app\\days",
     "\\src\\app\\entities",
-    "\\src\\app\\services",
-    "\\src\\app\\tasks-list"
+    "\\src\\app\\messages",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\days\\days.component.ts",
+  "SelectedNode": "\\src\\app\\messages\\messages.component.html",
   "PreviewInSolutionExplorer": false
 }

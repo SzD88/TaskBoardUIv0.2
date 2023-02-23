@@ -19,3 +19,11 @@ button {
   left: .1em;
 }
 
+.noweZadanie {
+width : 300px;
+
+}
+
+.subTasksInsideDay {
+  list-style:  decimal  ;
+}

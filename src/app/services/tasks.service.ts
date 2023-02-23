@@ -8,15 +8,20 @@ import { DatePipe } from '@angular/common';
 import { MessageService } from './message.service';
 import { Router, Routes } from '@angular/router';
 import { Task } from '../entities/Task';
+import { AppSettings } from '../AppSettings';
 ///
  
 export class AppModule {
 
 }
 ////
-const tasksUrl = 'https://localhost:7227/api/subtasks';
+const tasksUrl = AppSettings.backEndPoints + "/api/subtasks";
 
-const mainURL = 'http://localhost:4200/';
+  // 'https://localhost:7227/api/subtasks';
+
+const mainURL = AppSettings.frontEndPoints;
+
+  //'http://localhost:4200/';
 
 
 @Injectable({

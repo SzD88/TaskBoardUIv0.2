@@ -1,9 +1,7 @@
 <div *ngIf="day">
   <h2>Szczegóły dnia</h2>
-  <div>DATA: {{day.dayDate | date:'d-MM-y'}}</div>
-
-  <div>id: {{day.id}}</div>
-   
+  <div>Data: {{day.dayDate | date:'d-MM-y'}}</div>
+  Zadania:
   <div>
 
     <ul class="ulSubTaskInsideDay">
@@ -16,7 +14,7 @@
     </ul>
 
 
-    <input #box2 (keyup.enter)="onEnterCreate(box2.value )" placeholder="Wprowadź nowe zadanie"  >
+    <input class="noweZadanie" #box2 (keyup.enter)="onEnterCreate(box2.value )" placeholder="Wprowadź nowe zadanie"  >
 
 
 

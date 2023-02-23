@@ -2,7 +2,7 @@ import { Task } from "./Task";
 
 export interface Day {
   id: number;
-  dayDate: string;
+  dayDate: Date;
   title: string;
   description: string;
   completed: boolean;
