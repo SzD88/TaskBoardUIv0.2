@@ -6,20 +6,19 @@
    
   <div>
 
-    <ul class="subTasksInsideDay">
+    <ul class="ulSubTaskInsideDay">
       <li class="subTasksInsideDay" *ngFor="let cos of day.mainTasks">
-         
+
         {{setValue(cos.content)}}
-  
+
         <input #box (keyup.enter)="onEnter(box.value, cos.id)" [(ngModel)]="name" #ctrl="ngModel" required>
-         
       </li>
     </ul>
- 
 
 
- 
- 
+    <input #box2 (keyup.enter)="onEnterCreate(box2.value )" placeholder="Wprowadź nowe zadanie"  >
+
+
 
 
 

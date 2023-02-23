@@ -7,6 +7,7 @@ import { DaysService } from '../services/days.service';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 import { TasksService } from '../services/tasks.service';
 import { Task } from '../entities/Task';
+import { CreateTask } from '../entities/CreateTask';
 
 
 @Component({
@@ -52,6 +53,22 @@ export class DayDetailComponent implements OnInit
     
     var jsn = JSON.stringify(tsk)
     this.tasksService.updateTask(JSON.parse(jsn));
+
+  }
+  onEnterCreate(content: string) {
+    console.log("enter pressed");
+   
+
+    const newTask: CreateTask = {
+       
+      content: content,
+      levelAboveId: this.day!.id
+    };
+
+    var jsn = JSON.stringify(newTask)
+
+    console.log(jsn);
+    this.tasksService.addTask(JSON.parse(jsn));
 
   }
   
