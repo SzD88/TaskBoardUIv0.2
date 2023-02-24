@@ -9,6 +9,6 @@
     "\\src\\app\\messages",
     "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\messages\\messages.component.html",
+  "SelectedNode": "\\src\\app\\days\\days.component.ts",
   "PreviewInSolutionExplorer": false
 }
