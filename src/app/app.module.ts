@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { DayDetailComponent } from './day-detail/day-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
+import { DatePipe } from '@angular/common';
 // import { SubtaskViewComponent } from './subtask-view/subtask-view.component';
 
 @NgModule({
@@ -36,7 +37,7 @@ import { TasksListComponent } from './tasks-list/tasks-list.component';
     ])
 
   ],
-  providers: [DaysComponent,  
+  providers: [DaysComponent,  DatePipe
 ],
   bootstrap: [AppComponent]
 })
