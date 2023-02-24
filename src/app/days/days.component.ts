@@ -64,10 +64,10 @@ export class DaysComponent implements OnInit {
 
     let date1 = this.datepipe.transform(this.dateToCheck, 'yyyy-MM-dd');
     let date2 = this.datepipe.transform(this.currentDate, 'yyyy-MM-dd');
-    console.log(date1);
-    console.log(date2);
+  //  console.log(date1);
+   // console.log(date2);
      if ( date1 ===  date2) {
-      return "red"; 
+      return "gray"; 
      }
      return "white";
   }

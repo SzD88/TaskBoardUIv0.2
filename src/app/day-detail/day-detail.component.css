@@ -20,10 +20,29 @@ button {
 }
 
 .noweZadanie {
-width : 300px;
-
+  width: 350px;
+  width: 500px;
+  font-size: 33px;
+  margin-left: 38px;
 }
 
 .subTasksInsideDay {
   list-style:  decimal  ;
+
+  
+}
+.inputTask {
+width: 500px;
+font-size:33px;
+}
+.taskEditAndDelete {
+  display: inline-flex;
+  height: 80%;
+}
+.deleteButton {
+  text-align: center;
+  background: red;
+  font-size: 25px;
+  width: auto;
+  height: 25px;
 }

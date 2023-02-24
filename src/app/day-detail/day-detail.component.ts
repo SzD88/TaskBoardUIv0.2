@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 import { TasksService } from '../services/tasks.service';
 import { Task } from '../entities/Task';
 import { CreateTask } from '../entities/CreateTask';
+import { AppSettings } from '../AppSettings';
 
 
 @Component({
@@ -29,10 +30,28 @@ export class DayDetailComponent implements OnInit
     private tasksService: TasksService,
     private router: Router,
     private route: ActivatedRoute,
-    private projects: DaysComponent,
+    private daysComponent: DaysComponent,
 
   ) {
       
+  }
+  async deleteTask(day: Day, id: number) {
+      console.log("delete inside");
+     this.tasksService.deleteTask(id).subscribe(() => {
+    })
+
+     await this.delay(500);
+    this.refresh();
+
+    //this.day = day;
+    //this.daysComponent.ngOnInit();
+
+  }
+    delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+  refresh() {
+    window.location.href = AppSettings.frontEndPoints;
   }
   getValue(event: Event): string {
     return (event.target as HTMLInputElement).value;
@@ -40,9 +59,9 @@ export class DayDetailComponent implements OnInit
   ngOnInit() { 
   }
   onEnter(contentToUpdate:string, id: number) {
-    console.log("enter pressed");
-    console.log(contentToUpdate);
-    console.log(id);
+    //console.log("enter pressed");
+    //console.log(contentToUpdate);
+    //console.log(id);
 
     const tsk: Task = {
       id: id,
@@ -55,7 +74,7 @@ export class DayDetailComponent implements OnInit
     this.tasksService.updateTask(JSON.parse(jsn));
 
   }
-  onEnterCreate(content: string) {
+  async onEnterCreate(content: string) {
     console.log("enter pressed");
    
 
@@ -63,6 +82,8 @@ export class DayDetailComponent implements OnInit
        
       content: content,
       levelAboveId: this.day!.id
+
+
     };
 
     var jsn = JSON.stringify(newTask)
@@ -70,6 +91,9 @@ export class DayDetailComponent implements OnInit
     console.log(jsn);
     this.tasksService.addTask(JSON.parse(jsn));
 
+
+    await this.delay(500);
+    this.refresh();
   }
   
   setValue(enter:string) {
@@ -77,7 +101,7 @@ export class DayDetailComponent implements OnInit
   }
 
   addInput() {
-    console.log("test add input");
+   //   console.log("test add input");
 
     this.ngOnInit();
     // this.inputs.push(1);

@@ -85,7 +85,7 @@ export class TasksService {
         return req;
   }
 
-  deleteProject(id: number): Observable<Day>  {
+  deleteTask(id: number): Observable<Day>  {
     const deleteUrl = `${tasksUrl}?id=${id}`;
 
     const httpOptions = {
