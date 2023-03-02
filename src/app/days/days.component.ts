@@ -26,9 +26,7 @@ export class DaysComponent implements OnInit {
 
     this.dateToCheck = new Date;
      
-  }
-
-  
+  } 
   ngOnInit(): void {
      
 

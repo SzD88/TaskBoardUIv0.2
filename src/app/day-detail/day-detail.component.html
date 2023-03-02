@@ -7,10 +7,11 @@
     <ul class="ulSubTaskInsideDay">
       <li class="subTasksInsideDay" *ngFor="let cos of day.mainTasks">
 
-        {{setValue(cos.content)}}
-        <div class="taskEditAndDelete">
-        <input class="inputTask" #box (keyup.enter)="onEnter(box.value, cos.id)" [(ngModel)]="name" #ctrl="ngModel" required>
-        <button class="deleteButton" (click)="deleteTask(day, cos.id)" > X </button> </div>
+          {{setValue(cos.content)}}
+          <div class="taskEditAndDelete">
+            <input class="inputTask" #box (keyup.enter)="onEnter(box.value, cos.id)" [(ngModel)]="name" #ctrl="ngModel" required>
+            <button class="deleteButton" (click)="deleteTask(day, cos.id)"> X </button>
+          </div>
       </li>
     </ul>
 
