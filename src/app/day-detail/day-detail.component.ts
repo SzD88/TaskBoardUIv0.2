@@ -58,7 +58,7 @@ export class DayDetailComponent implements OnInit
   }
   ngOnInit() { 
   }
-  onEnter(contentToUpdate:string, id: number) {
+  onEnter(contentToUpdate:string, id: number, date: Date) {
     //console.log("enter pressed");
     //console.log(contentToUpdate);
     //console.log(id);
@@ -67,6 +67,8 @@ export class DayDetailComponent implements OnInit
       id: id,
       content: contentToUpdate,
       completed: false,
+      dayDate: date,
+
       levelAboveId: this.day!.id 
     };
     
@@ -74,13 +76,14 @@ export class DayDetailComponent implements OnInit
     this.tasksService.updateTask(JSON.parse(jsn));
 
   }
-  async onEnterCreate(content: string) {
+  async onEnterCreate(content: string, date: Date) {
     console.log("enter pressed");
    
 
     const newTask: CreateTask = {
        
       content: content,
+      dayDate: date,
       levelAboveId: this.day!.id
 
 

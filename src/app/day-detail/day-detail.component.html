@@ -9,14 +9,14 @@
 
           {{setValue(cos.content)}}
           <div class="taskEditAndDelete">
-            <input class="inputTask" #box (keyup.enter)="onEnter(box.value, cos.id)" [(ngModel)]="name" #ctrl="ngModel" required>
+            <input class="inputTask" #box (keyup.enter)="onEnter(box.value, cos.id, day.dayDate)" [(ngModel)]="name" #ctrl="ngModel" required>
             <button class="deleteButton" (click)="deleteTask(day, cos.id)"> X </button>
           </div>
       </li>
     </ul>
 
 
-    <input class="noweZadanie" #box2 (keyup.enter)="onEnterCreate(box2.value )" placeholder="Wprowadź nowe zadanie"  >
+    <input class="noweZadanie" #box2 (keyup.enter)="onEnterCreate(box2.value, day.dayDate )" placeholder="Wprowadź nowe zadanie"  >
 
 
 
