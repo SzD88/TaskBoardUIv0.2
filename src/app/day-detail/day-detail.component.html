@@ -1,7 +1,9 @@
-<div *ngIf="day">
-  <h2>Szczegóły dnia</h2>
-  <div>Data: {{day.dayDate | date:'d-MM-y'}}</div>
-  Zadania:
+<div *ngIf="day" >
+  <div class="opisSzczegol">
+    <h2 class="">Szczegóły dnia  {{day.dayDate | date:'d-MM-y'}}</h2>
+     
+    Zadania:
+  </div>
   <div>
 
     <ul class="ulSubTaskInsideDay">

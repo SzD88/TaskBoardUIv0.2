@@ -19,6 +19,12 @@ button {
   left: .1em;
 }
 
+.opisSzczegol {
+    margin-left : 50px;
+    font-size : 33px;
+    padding: 4px;
+
+}
 .noweZadanie {
   width: 350px;
   width: 500px;
