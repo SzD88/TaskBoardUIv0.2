@@ -58,7 +58,7 @@ export class DayDetailComponent implements OnInit
   }
   ngOnInit() { 
   }
-  onEnter(contentToUpdate:string, id: number, date: Date) {
+ async onEnter(contentToUpdate:string, id: number, date: Date) {
     //console.log("enter pressed");
     //console.log(contentToUpdate);
     //console.log(id);
@@ -74,6 +74,9 @@ export class DayDetailComponent implements OnInit
     
     var jsn = JSON.stringify(tsk)
     this.tasksService.updateTask(JSON.parse(jsn));
+
+    await this.delay(500);
+    this.refresh();
 
   }
   async onEnterCreate(content: string, date: Date) {
@@ -121,9 +124,11 @@ export class DayDetailComponent implements OnInit
 
 
 
-  onChangesSubmited(project: Day): void {
+  async onChangesSubmited(project: Day) {
     var jsn = JSON.stringify(this.day);
     this.daysService.updateDay(JSON.parse(jsn));
+    await this.delay(500);
+    this.refresh();
   }
   
   addNewAsCurrent(project: Day): void {

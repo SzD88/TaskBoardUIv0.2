@@ -23,11 +23,12 @@
   border-color: #ccc;
   width: 150px;
   height: 200px;
+
+
 }
 
 .calendar {
-padding: 0;
-
+  padding: 0;
 }
  span {
   font-size: 22px;
@@ -50,14 +51,13 @@ max-width: 100%;
 }
 .ulClass {
 
- 
 }
 
 
 .liClass {
   display: table-cell;
   max-width: 30%;
- 
+
 }
 
 .box {
