@@ -53,6 +53,7 @@ export class DaysComponent implements OnInit {
     this.dateToCheck = enter;
 
   }
+  //kolor zmiana
   getColor() {
      
     //console.log( typeof ( this.dateToCheck  )  );
@@ -65,9 +66,18 @@ export class DaysComponent implements OnInit {
   //  console.log(date1);
    // console.log(date2);
      if ( date1 ===  date2) {
-      return "gray"; 
-     }
-     return "white";
+       return "darkseagreen";
+    }
+    var sunday = new Date(this.dateToCheck).getDay();
+
+    //if (sunday === 0) {
+    //  console.log("red");
+
+    // // return "red";
+
+    //}
+    return "lightyellow";
+
   }
 
   onSelect(day: Day): void {
