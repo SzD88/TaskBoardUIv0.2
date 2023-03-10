@@ -9,7 +9,7 @@ import { DatePipe } from '@angular/common';
   templateUrl: './days.component.html',
   styleUrls: ['./days.component.css'],
 })
-
+ 
 export class DaysComponent implements OnInit {
   @Input() inputDate: any;
   myData: any;
@@ -20,13 +20,24 @@ export class DaysComponent implements OnInit {
   selectedDay?: Day;
 
   dateToCheck: Date;
+ public show: boolean;
   currentDate = new Date()  ;
    
   constructor(private daysService: DaysService, private messageService: MessageService, public datepipe: DatePipe) {
 
     this.dateToCheck = new Date;
-     
-  } 
+    this.show = true;
+  }
+
+  hide() {
+    this.show = false;
+
+  }
+  onSelect(day: Day): void {
+    this.selectedDay = day;
+    this.messageService.add(`ProjectsService: Selected project number`);
+  }
+
   ngOnInit(): void {
      
 
@@ -80,10 +91,6 @@ export class DaysComponent implements OnInit {
 
   }
 
-  onSelect(day: Day): void {
-    this.selectedDay = day;
-    this.messageService.add(`ProjectsService: Selected project number`);
-  }
 }
 
 

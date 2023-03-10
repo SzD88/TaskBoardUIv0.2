@@ -7,6 +7,10 @@ import { MatAlertComponent } from '../ng-material/mat-alert/mat-alert.component'
 import { MatConfirmComponent } from '../ng-material/mat-confirm/mat-confirm.component';
 import { MatInputPromptComponent } from '../ng-material/mat-input-prompt/mat-input-prompt.component';
 
+import { DayDetailComponent } from '../day-detail/day-detail.component';
+import { Day } from '../entities/Day';
+import { DaysComponent } from '../days/days.component';
+
 
 @Component({
   selector: 'app-navbar',
@@ -17,6 +21,9 @@ export class NavbarComponent {
   title = 'Tablica zadań';
   frontEndPoints = AppSettings.frontEndPoints;
   intranet = AppSettings.intranet;
+
+  selectedDay?: Date;
+
 
 
   dataFromDialog: any;
@@ -30,6 +37,16 @@ export class NavbarComponent {
       },
     });
   }
+  
+
+  onSelect(): void {
+
+ 
+
+    var day = new Date();
+    this.selectedDay = day;
+  }
+
 
   confirmDialog() {
     const ref: MatDialogRef<MatConfirmComponent> = this.dialog.open(
