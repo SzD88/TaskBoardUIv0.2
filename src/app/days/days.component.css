@@ -24,7 +24,7 @@
   width: 150px;
   height: 200px;
 
-
+   
 }
 
 .calendar {
@@ -62,8 +62,8 @@ max-width: 100%;
 
 .box {
   inline-size: 150px;
-  overflow-wrap:break-word;
-  
+  overflow-wrap: break-word;
+  border-bottom: 1px solid;
 }
 
  

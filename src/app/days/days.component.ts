@@ -68,14 +68,14 @@ export class DaysComponent implements OnInit {
      if ( date1 ===  date2) {
        return "darkseagreen";
     }
-    var sunday = new Date(this.dateToCheck).getDay();
+    var isSunday = new Date(this.dateToCheck).getDay();
 
-    //if (sunday === 0) {
-    //  console.log("red");
-
-    // // return "red";
-
-    //}
+    if (isSunday === 0) {  
+      return "#d46969"; 
+    }
+    if (isSunday === 6) {
+      return "#6e9bc6";
+    }
     return "lightyellow";
 
   }

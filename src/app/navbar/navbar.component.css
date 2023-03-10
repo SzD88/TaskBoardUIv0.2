@@ -2,23 +2,51 @@
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+  font-size: 40px;
+  margin: 0 0 0px;
 
 }
-/*mat-form-field {
-  background-color: white;
-  height: 20px;
-  background-color: red !important;
-  height: 50px;
-  transition: height ease-in-out 400ms;
-}*/
+.navbar {
+  display: inline-block;
+  margin-left: 1px;
+  margin-top: 13px;
+  background-color: lightyellow;
+  text-decoration: none;
+  border: groove;
+  border-color: black;
+  color: #00FFFF;
+  margin-right: 1px;
+  text-align: center;
+  padding: 20px 0;
+
+}
+
+.navbarAll {
+    margin-left: 41px;
+}
 h2, h3 {
   color: #444;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
 }
 
- 
+.znajdzDzien {
+  margin-left: 1px;
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 69%;
+  padding-bottom: 10px;
+  display: inline-block;
+  text-decoration: none;
+  background-color: lightyellow;
+  border: groove;
+  border-color: black;
+  color: #00FFFF;
+  text-align: center;
+}
+.znajdzDzien:hover {
+    background-color:lightyellow; 
+}
 body {
   margin: 2em;
 }
@@ -56,6 +84,3 @@ button {
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
-
-
- 
