@@ -3,12 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\day-detail",
-    "\\src\\app\\days",
-    "\\src\\app\\entities",
+    "\\src\\app\\find",
     "\\src\\app\\messages",
-    "\\src\\app\\services"
+    "\\src\\app\\services",
+    "\\src\\app\\tasks-list"
   ],
-  "SelectedNode": "\\src\\app\\messages\\messages.component.html",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }
