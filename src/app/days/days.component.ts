@@ -9,7 +9,7 @@ import { DatePipe } from '@angular/common';
   templateUrl: './days.component.html',
   styleUrls: ['./days.component.css'],
 })
-
+ 
 export class DaysComponent implements OnInit {
   @Input() inputDate: any;
   myData: any;
@@ -20,15 +20,24 @@ export class DaysComponent implements OnInit {
   selectedDay?: Day;
 
   dateToCheck: Date;
+ public show: boolean;
   currentDate = new Date()  ;
    
   constructor(private daysService: DaysService, private messageService: MessageService, public datepipe: DatePipe) {
 
     this.dateToCheck = new Date;
-     
+    this.show = true;
   }
 
-  
+  hide() {
+    this.show = false;
+
+  }
+  onSelect(day: Day): void {
+    this.selectedDay = day;
+    this.messageService.add(`ProjectsService: Selected project number`);
+  }
+
   ngOnInit(): void {
      
 
@@ -55,6 +64,7 @@ export class DaysComponent implements OnInit {
     this.dateToCheck = enter;
 
   }
+  //kolor zmiana
   getColor() {
      
     //console.log( typeof ( this.dateToCheck  )  );
@@ -64,18 +74,23 @@ export class DaysComponent implements OnInit {
 
     let date1 = this.datepipe.transform(this.dateToCheck, 'yyyy-MM-dd');
     let date2 = this.datepipe.transform(this.currentDate, 'yyyy-MM-dd');
-    console.log(date1);
-    console.log(date2);
+  //  console.log(date1);
+   // console.log(date2);
      if ( date1 ===  date2) {
-      return "red"; 
-     }
-     return "white";
+       return "darkseagreen";
+    }
+    var isSunday = new Date(this.dateToCheck).getDay();
+
+    if (isSunday === 0) {  
+      return "#d46969"; 
+    }
+    if (isSunday === 6) {
+      return "#6e9bc6";
+    }
+    return "lightyellow";
+
   }
 
-  onSelect(day: Day): void {
-    this.selectedDay = day;
-    this.messageService.add(`ProjectsService: Selected project number`);
-  }
 }
 
 

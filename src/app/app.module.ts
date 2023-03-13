@@ -13,12 +13,12 @@ import { DayDetailComponent } from './day-detail/day-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { DatePipe } from '@angular/common';
-// import { SubtaskViewComponent } from './subtask-view/subtask-view.component';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { FindComponent } from './find/find.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//dialogWindow
+import { NgMaterialModule } from './ng-material/ng-material.module';
+
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,27 +26,25 @@ import { FindComponent } from './find/find.component';
     DayDetailComponent,
     MessagesComponent,
     TasksListComponent,
-    FindComponent,
-   // SubtaskViewComponent,
+    NavbarComponent,
+
   ],
   imports: [
-    BrowserModule, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatDatepickerModule,
+    BrowserModule, NgMaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: DayDetailComponent },
-      { path: 'find', redirectTo: '/FindComponent', pathMatch: 'full'  },
+      // { path: 'create', component: DayCreateComponent },
 
-       
-     // { path: 'create', component: DayCreateComponent },
-    
-    ])
+    ]),
+    BrowserAnimationsModule
 
   ],
-  providers: [DaysComponent,  DatePipe
-],
+  providers: [DaysComponent, DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

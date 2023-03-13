@@ -1,14 +1,33 @@
-<!--<a href='http://192.168.43.227:80' style="display: inline-block; text-decoration: none; border: groove; border-color: black; color: #00FFFF; margin-right: 20px;"><h1>{{title}} </h1></a>-->
-<a href='http://10.1.1.2/intranet/' style="display:inline-block; text-decoration:none; border: groove; border-color: black; color:#00FFFF;"><h1>Spis pism 2023</h1></a>
+<!--<a href='{{frontEndPoints}}' style="display: inline-block; margin-left:41px; background-color: lightyellow; text-decoration: none; border: groove; border-color: black; color: #00FFFF; margin-right: 20px;"><h1>{{title}} </h1></a>
+<a href='{{intranet}}' style="display: inline-block; text-decoration: none; background-color: lightyellow; border: groove; border-color: black; color: #00FFFF;"><h1>Spis pism 2023</h1></a>-->
+
+
+
+
+<app-navbar> </app-navbar>
 
 <router-outlet></router-outlet>
 
 <app-days></app-days>
 <!--<app-messages></app-messages>-->
 
-<!--<mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>-->
 
+
+<section class="mat-button-container">
+  <h2>Angular Material dialog</h2>
+  <div class="example-button-row">
+    <button mat-raised-button (click)="alertDialog()">
+      Angular Material Alert
+    </button>
+    <button mat-raised-button color="primary" (click)="confirmDialog()">
+      Confirm
+    </button>
+    <button mat-raised-button color="accent" (click)="showPrompt()">
+      Prompt Input
+    </button>
+  </div>
+</section>
+
+<h2 *ngIf="dataFromDialog">
+  Data from Angular material dialog : {{ dataFromDialog | json }}
+</h2>

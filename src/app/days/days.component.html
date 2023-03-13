@@ -1,38 +1,40 @@
+<div *ngIf="show">
+
+  <app-day-detail [day]="selectedDay"></app-day-detail>
+
+  <div class="calendar">
+    <!--<h2>Dni: </h2>-->
+    <ul class="ulClass">
+      <li class="liClass" *ngFor="let day of currentWeek">
+
+        {{setDate(day.dayDate)}}
 
 
-<app-day-detail [day]="selectedDay"></app-day-detail>
 
-<div class="calendar">
-  <h2>Dni: </h2>
-  <ul class="ulClass">
-    <li class="liClass" *ngFor="let day of currentWeek">
+        <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)"
+             [ngStyle]="{'background-color': getColor()}">
+          <span>{{day.dayDate |  date:'d-MM-y' }}</span>
 
-      {{setDate(day.dayDate)}}
+          <div class="divClass2">
 
-       
+      <li class="liClass2" *ngFor="let cos of day.mainTasks">
 
-      <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)"
-           [ngStyle]="{'background-color': getColor()}">
-        <span>{{day.dayDate |  date:'d-MM-y' }}</span>
-
-        <div class="divClass2">
-
-<li class="liClass2" *ngFor="let cos of day.mainTasks">
-
-      <div class="box"> {{cos.content}} </div>
+        <div class="box"> {{cos.content}} </div>
 
 
-    </li>
-</div>
+      </li>
   </div>
+</div>
   </li>
 </ul>
 
 
 <ul class="ulClass">
   <li class="liClass" *ngFor="let day of week1">
+    {{setDate(day.dayDate)}}
 
-    <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)">
+    <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)"
+         [ngStyle]="{'background-color': getColor()}">
       <span>{{day.dayDate |  date:'d-MM-y' }}</span>
 
 
@@ -50,8 +52,10 @@
 
 <ul class="ulClass">
   <li class="liClass" *ngFor="let day of week2">
+    {{setDate(day.dayDate)}}
 
-    <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)">
+    <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)"
+         [ngStyle]="{'background-color': getColor()}">
       <span>{{day.dayDate |  date:'d-MM-y' }}</span>
 
 
@@ -69,8 +73,10 @@
 
 <ul class="ulClass">
   <li class="liClass" *ngFor="let day of week3">
+    {{setDate(day.dayDate)}}
 
-    <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)">
+    <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)"
+         [ngStyle]="{'background-color': getColor()}">
       <span>{{day.dayDate |  date:'d-MM-y' }}</span>
 
 
@@ -85,4 +91,7 @@
   </div>
   </li>
 </ul>
+</div>
+
+
 </div>

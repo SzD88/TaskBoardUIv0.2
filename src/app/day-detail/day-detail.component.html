@@ -1,22 +1,27 @@
-<div *ngIf="day">
-  <h2>Szczegóły dnia</h2>
-  <div>Data: {{day.dayDate | date:'d-MM-y'}}</div>
-  Zadania:
-  <div>
+<div *ngIf="day" >
+  <div class="opisSzczegol">
+    <h3 class="">Szczegóły dnia  {{day.dayDate | date:'d-MM-y'}}
+      <br />
+    Zadania:</h3>
+     
+ 
 
     <ul class="ulSubTaskInsideDay">
       <li class="subTasksInsideDay" *ngFor="let cos of day.mainTasks">
 
-        {{setValue(cos.content)}}
-
-        <input #box (keyup.enter)="onEnter(box.value, cos.id)" [(ngModel)]="name" #ctrl="ngModel" required>
+          {{setValue(cos.content)}}
+        <div class="taskEditAndDelete">
+          <input class="inputTask" #box (keyup.enter)="onEnter(box.value, cos.id, day.dayDate, false)" [(ngModel)]="name" #ctrl="ngModel" required>
+          <button class="deleteButton" (click)="onEnter(box.value, cos.id, day.dayDate, true)"> X </button>   <!--deleteTask(day, cos.id)-->
+        </div>
       </li>
     </ul>
 
 
-    <input class="noweZadanie" #box2 (keyup.enter)="onEnterCreate(box2.value )" placeholder="Wprowadź nowe zadanie"  >
+    <input class="noweZadanie" #box2 (keyup.enter)="onEnterCreate(box2.value, day.dayDate )" placeholder="Wprowadź nowe zadanie"  >
 
-
+    <br />
+    <br />
 
 
 

@@ -2,7 +2,7 @@
   display: block;
   padding: 6px 12px;
   margin-bottom: 0;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.2;
   text-align: center;
@@ -23,11 +23,12 @@
   border-color: #ccc;
   width: 150px;
   height: 200px;
+
+   
 }
 
 .calendar {
-padding: 0;
-
+  padding: 0;
 }
  span {
   font-size: 22px;
@@ -50,20 +51,19 @@ max-width: 100%;
 }
 .ulClass {
 
- 
 }
 
 
 .liClass {
   display: table-cell;
   max-width: 30%;
- 
+
 }
 
 .box {
   inline-size: 150px;
-  overflow-wrap:break-word;
-  
+  overflow-wrap: break-word;
+  border-bottom: 1px solid;
 }
 
  

@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 import { TasksService } from '../services/tasks.service';
 import { Task } from '../entities/Task';
 import { CreateTask } from '../entities/CreateTask';
+import { AppSettings } from '../AppSettings';
 
 
 @Component({
@@ -29,40 +30,59 @@ export class DayDetailComponent implements OnInit
     private tasksService: TasksService,
     private router: Router,
     private route: ActivatedRoute,
-    private projects: DaysComponent,
+    private daysComponent: DaysComponent,
 
   ) {
       
   }
+  //DELETE METHOD
+  async deleteTask(day: Day, id: number) {
+      console.log("delete inside");
+     this.tasksService.deleteTask(id).subscribe(() => {
+    }) 
+     await this.delay(500);
+    this.refresh(); 
+  }
+  //REFRESH
+  refresh() {
+    window.location.href = AppSettings.frontEndPoints;
+  }
+  //GETVALUE
   getValue(event: Event): string {
     return (event.target as HTMLInputElement).value;
   }
-  ngOnInit() { 
-  }
-  onEnter(contentToUpdate:string, id: number) {
-    console.log("enter pressed");
-    console.log(contentToUpdate);
-    console.log(id);
+  //UPDATE SUBTASK
+  async onEnter(contentToUpdate: string, id: number, date: Date, completed: boolean) {
+ 
 
     const tsk: Task = {
       id: id,
       content: contentToUpdate,
-      completed: false,
-      levelAboveId: this.day!.id 
+      completed: completed,
+      dayDate: date,
+
+      levelAboveId: this.day!.id
     };
-    
+
     var jsn = JSON.stringify(tsk)
     this.tasksService.updateTask(JSON.parse(jsn));
 
+    await this.delay(500);
+    this.refresh();
+
   }
-  onEnterCreate(content: string) {
+
+ 
+  //CREATE SUBTASK
+  async onEnterCreate(content: string, date: Date) {
     console.log("enter pressed");
    
 
     const newTask: CreateTask = {
        
       content: content,
-      levelAboveId: this.day!.id
+      dayDate: date,
+      levelAboveId: this.day!.id 
     };
 
     var jsn = JSON.stringify(newTask)
@@ -70,33 +90,33 @@ export class DayDetailComponent implements OnInit
     console.log(jsn);
     this.tasksService.addTask(JSON.parse(jsn));
 
+
+    await this.delay(500);
+    this.refresh();
   }
-  
+  //DELAY
+  delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
   setValue(enter:string) {
      this.name = enter;
   }
 
   addInput() {
-    console.log("test add input");
 
     this.ngOnInit();
-    // this.inputs.push(1);
   }
-
+  ngOnInit() {
+  }
   overrideDay(id: string, projectNumber: string, title: string, description: string, completed: boolean) {
   }
-
-  connectionMethod(id: number) {
-
-
-    console.log(id);}
-
-
-
-
-  onChangesSubmited(project: Day): void {
+ 
+   
+  async onChangesSubmited(project: Day) {
     var jsn = JSON.stringify(this.day);
     this.daysService.updateDay(JSON.parse(jsn));
+    await this.delay(500);
+    this.refresh();
   }
   
   addNewAsCurrent(project: Day): void {
@@ -106,19 +126,11 @@ export class DayDetailComponent implements OnInit
   getCurrentDay( ) {
 
     console.log("from method");
-    console.log(this.day);
-
-    
+    console.log(this.day); 
   }
   deleteCurrentDay(id: number) {  
     this.daysService.testDelete(id).subscribe(() => { 
     }) 
   }
- 
-
-   
-
- 
-
- 
+  
 }

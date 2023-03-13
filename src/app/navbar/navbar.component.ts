@@ -1,26 +1,30 @@
 import { Component } from '@angular/core';
-import { AppSettings } from './AppSettings';
-// import { MaterialModule } from './material/material.module';
-import { DialogBodyComponent } from './dialog-body/dialog-body.component';
+import { AppSettings } from '../AppSettings';
+import { AppComponent } from '../app.component';
 
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { MatAlertComponent } from './ng-material/mat-alert/mat-alert.component';
-import { MatConfirmComponent } from './ng-material/mat-confirm/mat-confirm.component';
-import { MatInputPromptComponent } from './ng-material/mat-input-prompt/mat-input-prompt.component';
+import { MatAlertComponent } from '../ng-material/mat-alert/mat-alert.component';
+import { MatConfirmComponent } from '../ng-material/mat-confirm/mat-confirm.component';
+import { MatInputPromptComponent } from '../ng-material/mat-input-prompt/mat-input-prompt.component';
 
+import { DayDetailComponent } from '../day-detail/day-detail.component';
+import { Day } from '../entities/Day';
+import { DaysComponent } from '../days/days.component';
 
-const url = AppSettings.frontEndPoints;
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-
-export class AppComponent {
+export class NavbarComponent {
   title = 'Tablica zadań';
   frontEndPoints = AppSettings.frontEndPoints;
   intranet = AppSettings.intranet;
+
+  selectedDay?: Date;
+
+
 
   dataFromDialog: any;
 
@@ -33,6 +37,16 @@ export class AppComponent {
       },
     });
   }
+  
+
+  onSelect(): void {
+
+ 
+
+    var day = new Date();
+    this.selectedDay = day;
+  }
+
 
   confirmDialog() {
     const ref: MatDialogRef<MatConfirmComponent> = this.dialog.open(

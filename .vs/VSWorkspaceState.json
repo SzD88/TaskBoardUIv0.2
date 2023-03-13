@@ -1,13 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.angular",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\find",
-    "\\src\\app\\messages",
-    "\\src\\app\\services",
-    "\\src\\app\\tasks-list"
+    "\\src\\app\\day-detail",
+    "\\src\\app\\days",
+    "\\src\\app\\dialog-search",
+    "\\src\\app\\entities",
+    "\\src\\app\\material",
+    "\\src\\app\\navbar"
   ],
-  "SelectedNode": "\\src\\app\\app.module.ts",
+  "SelectedNode": "\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }
