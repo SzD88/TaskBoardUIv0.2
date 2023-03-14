@@ -10,7 +10,7 @@ import { MatInputPromptComponent } from '../ng-material/mat-input-prompt/mat-inp
 import { DayDetailComponent } from '../day-detail/day-detail.component';
 import { Day } from '../entities/Day';
 import { DaysComponent } from '../days/days.component';
-import { MatDatePickerComponent } from '../ng-material/mat-date-picker/mat-date-picker.component';
+import { MatDatePickerComponent } from '../mat-date-picker/mat-date-picker.component';
 
 
 @Component({

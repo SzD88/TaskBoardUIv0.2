@@ -19,13 +19,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgMaterialModule } from './ng-material/ng-material.module';
 //import { MatDatePickerComponent } from './ng-material/mat-date-picker/mat-date-picker.component';
 
-
+import { FormGroup, FormControl } from '@angular/forms';
 // import { MaterialExampleModule } from '../material.module';
 // import { MatDatePickerComponent } from './ng-material/mat-date-picker';
 // import { MatNativeDateModule } from '@angular/material/core';
 
  import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DialogAddRangeComponent } from './dialog-add-range/dialog-add-range.component';
  
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MessagesComponent,
     TasksListComponent,
     NavbarComponent,
+    DialogAddRangeComponent,
 
   //  MatDatePickerComponent,
 

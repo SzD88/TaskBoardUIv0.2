@@ -1,25 +1,23 @@
 import { Component } from '@angular/core';
-import { AppSettings } from './AppSettings';
+import { AppSettings } from '../AppSettings';
 // import { MaterialModule } from './material/material.module';
-import { DialogBodyComponent } from './dialog-body/dialog-body.component';
+import { DialogBodyComponent } from '../dialog-body/dialog-body.component';
 
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { MatAlertComponent } from './ng-material/mat-alert/mat-alert.component';
-import { MatConfirmComponent } from './ng-material/mat-confirm/mat-confirm.component';
-import { MatInputPromptComponent } from './ng-material/mat-input-prompt/mat-input-prompt.component';
+import { MatAlertComponent } from '../ng-material/mat-alert/mat-alert.component';
+import { MatConfirmComponent } from '../ng-material/mat-confirm/mat-confirm.component';
+import { MatInputPromptComponent } from '../ng-material/mat-input-prompt/mat-input-prompt.component';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormGroup, FormControl } from '@angular/forms';
 
-const url = AppSettings.frontEndPoints;
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-dialog-add-range',
+  templateUrl: './dialog-add-range.component.html',
+  styleUrls: ['./dialog-add-range.component.css']
 })
-
-export class AppComponent {
+export class DialogAddRangeComponent {
   title = 'Tablica zadań';
   frontEndPoints = AppSettings.frontEndPoints;
   intranet = AppSettings.intranet;
