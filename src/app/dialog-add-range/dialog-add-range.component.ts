@@ -1,31 +1,26 @@
 import { Component } from '@angular/core';
 import { AppSettings } from '../AppSettings';
-import { AppComponent } from '../app.component';
+// import { MaterialModule } from './material/material.module';
+import { DialogBodyComponent } from '../dialog-body/dialog-body.component';
 
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatAlertComponent } from '../ng-material/mat-alert/mat-alert.component';
 import { MatConfirmComponent } from '../ng-material/mat-confirm/mat-confirm.component';
 import { MatInputPromptComponent } from '../ng-material/mat-input-prompt/mat-input-prompt.component';
 
-import { DayDetailComponent } from '../day-detail/day-detail.component';
-import { Day } from '../entities/Day';
-import { DaysComponent } from '../days/days.component';
-import { MatDatePickerComponent } from '../mat-date-picker/mat-date-picker.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-dialog-add-range',
+  templateUrl: './dialog-add-range.component.html',
+  styleUrls: ['./dialog-add-range.component.css']
 })
-export class NavbarComponent {
+export class DialogAddRangeComponent {
   title = 'Tablica zadań';
   frontEndPoints = AppSettings.frontEndPoints;
   intranet = AppSettings.intranet;
-
-  selectedDay?: Date;
-
-
 
   dataFromDialog: any;
 
@@ -38,16 +33,6 @@ export class NavbarComponent {
       },
     });
   }
-  
-
-  onSelect(): void {
-
- 
-
-    var day = new Date();
-    this.selectedDay = day;
-  }
-
 
   confirmDialog() {
     const ref: MatDialogRef<MatConfirmComponent> = this.dialog.open(
@@ -63,13 +48,6 @@ export class NavbarComponent {
       }
     );
   }
-  showCalendar(): void {
-    const dialogRef = this.dialog.open(MatDatePickerComponent, {
-      width: '350px',
-      height: '400px'
-    });
-
-  }
 
   showPrompt(): void {
     const dialogRef = this.dialog.open(MatInputPromptComponent, {
@@ -77,13 +55,15 @@ export class NavbarComponent {
       height: '400px',
     });
 
-    dialogRef.afterClosed().subscribe((data) => {
-      this.dataFromDialog = data.form;
-      if (data.clicked === 'submit') {
-        console.log('Sumbit button clicked');
-      }
-    });
+    //dialogRef.afterClosed().subscribe((data) => {
+    //  this.dataFromDialog = data.form; //tutaj
+    //  if (data.clicked === 'submit') {
+    //    console.log('Sumbit button clicked');
+    //  }
+    //});
   }
-
-
+  range = new FormGroup({
+    start: new FormControl<Date | null>(null),
+    end: new FormControl<Date | null>(null),
+  });
 }

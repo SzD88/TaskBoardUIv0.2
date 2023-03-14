@@ -11,6 +11,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+//import { MatDatePickerComponent } from './mat-date-picker/mat-date-picker.component';
 
 const MaterialModules = [
   MatDialogModule,
@@ -27,6 +28,7 @@ const MaterialModules = [
     MatAlertComponent,
     MatConfirmComponent,
     MatInputPromptComponent,
+   // MatDatePickerComponent
   ],
   imports: [CommonModule, MaterialModules, ReactiveFormsModule],
   exports: [MaterialModules],

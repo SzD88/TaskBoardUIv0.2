@@ -8,13 +8,21 @@ import { MatAlertComponent } from './ng-material/mat-alert/mat-alert.component';
 import { MatConfirmComponent } from './ng-material/mat-confirm/mat-confirm.component';
 import { MatInputPromptComponent } from './ng-material/mat-input-prompt/mat-input-prompt.component';
 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FormGroup, FormControl } from '@angular/forms';
+ 
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+
 
 const url = AppSettings.frontEndPoints;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+   providers: [
+  
+     { provide: MAT_DATE_LOCALE, useValue: 'pl-PL' }]
 })
 
 export class AppComponent {
@@ -55,13 +63,15 @@ export class AppComponent {
       height: '400px',
     });
 
-    dialogRef.afterClosed().subscribe((data) => {
-      this.dataFromDialog = data.form;
-      if (data.clicked === 'submit') {
-        console.log('Sumbit button clicked');
-      }
-    });
+    //dialogRef.afterClosed().subscribe((data) => {
+    //  this.dataFromDialog = data.form; //tutaj
+    //  if (data.clicked === 'submit') {
+    //    console.log('Sumbit button clicked');
+    //  }
+    //});
   }
-
-
+  range = new FormGroup({
+    start: new FormControl<Date | null>(null),
+    end: new FormControl<Date | null>(null),
+  });
 }
