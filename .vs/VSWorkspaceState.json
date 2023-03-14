@@ -6,11 +6,10 @@
     "\\src\\app",
     "\\src\\app\\day-detail",
     "\\src\\app\\days",
-    "\\src\\app\\dialog-search",
     "\\src\\app\\entities",
-    "\\src\\app\\material",
-    "\\src\\app\\navbar"
+    "\\src\\app\\navbar",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\app.component.ts",
+  "SelectedNode": "\\src\\app\\services\\tasks.service.ts",
   "PreviewInSolutionExplorer": false
 }

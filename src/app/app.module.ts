@@ -17,7 +17,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //dialogWindow
 import { NgMaterialModule } from './ng-material/ng-material.module';
+//import { MatDatePickerComponent } from './ng-material/mat-date-picker/mat-date-picker.component';
 
+
+// import { MaterialExampleModule } from '../material.module';
+// import { MatDatePickerComponent } from './ng-material/mat-date-picker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+import { MatDatepickerModule } from '@angular/material/datepicker';
  
 @NgModule({
   declarations: [
@@ -26,7 +33,8 @@ import { NgMaterialModule } from './ng-material/ng-material.module';
     DayDetailComponent,
     MessagesComponent,
     TasksListComponent,
-    NavbarComponent,
+    NavbarComponent, 
+  //  MatDatePickerComponent,
 
   ],
   imports: [
@@ -34,7 +42,7 @@ import { NgMaterialModule } from './ng-material/ng-material.module';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule, MatDatepickerModule,
     RouterModule.forRoot([
       { path: '', component: DayDetailComponent },
       // { path: 'create', component: DayCreateComponent },
@@ -45,6 +53,6 @@ import { NgMaterialModule } from './ng-material/ng-material.module';
   ],
   providers: [DaysComponent, DatePipe
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ]
 })
 export class AppModule { }
