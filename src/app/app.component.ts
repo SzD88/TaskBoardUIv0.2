@@ -8,6 +8,8 @@ import { MatAlertComponent } from './ng-material/mat-alert/mat-alert.component';
 import { MatConfirmComponent } from './ng-material/mat-confirm/mat-confirm.component';
 import { MatInputPromptComponent } from './ng-material/mat-input-prompt/mat-input-prompt.component';
 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
 
 const url = AppSettings.frontEndPoints;
 
@@ -55,12 +57,12 @@ export class AppComponent {
       height: '400px',
     });
 
-    dialogRef.afterClosed().subscribe((data) => {
-      this.dataFromDialog = data.form;
-      if (data.clicked === 'submit') {
-        console.log('Sumbit button clicked');
-      }
-    });
+    //dialogRef.afterClosed().subscribe((data) => {
+    //  this.dataFromDialog = data.form; //tutaj
+    //  if (data.clicked === 'submit') {
+    //    console.log('Sumbit button clicked');
+    //  }
+    //});
   }
 
 

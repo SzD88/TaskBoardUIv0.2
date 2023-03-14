@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule , } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,9 +22,10 @@ import { NgMaterialModule } from './ng-material/ng-material.module';
 
 // import { MaterialExampleModule } from '../material.module';
 // import { MatDatePickerComponent } from './ng-material/mat-date-picker';
-import { MatNativeDateModule } from '@angular/material/core';
+// import { MatNativeDateModule } from '@angular/material/core';
 
-import { MatDatepickerModule } from '@angular/material/datepicker';
+ import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
  
 @NgModule({
   declarations: [
@@ -33,16 +34,17 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     DayDetailComponent,
     MessagesComponent,
     TasksListComponent,
-    NavbarComponent, 
+    NavbarComponent,
+
   //  MatDatePickerComponent,
 
   ],
   imports: [
-    BrowserModule, NgMaterialModule,
+    BrowserModule, NgMaterialModule, MatDatepickerModule, MatNativeDateModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule, MatDatepickerModule,
+    FormsModule, //  MatDatepickerModule,
     RouterModule.forRoot([
       { path: '', component: DayDetailComponent },
       // { path: 'create', component: DayCreateComponent },
