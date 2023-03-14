@@ -63,12 +63,12 @@ export class AppComponent {
       height: '400px',
     });
 
-    //dialogRef.afterClosed().subscribe((data) => {
-    //  this.dataFromDialog = data.form; //tutaj
-    //  if (data.clicked === 'submit') {
-    //    console.log('Sumbit button clicked');
-    //  }
-    //});
+    dialogRef.afterClosed().subscribe((data) => {
+      this.dataFromDialog = data.form; //tutaj
+      if (data.clicked === 'submit') {
+        alert('Sumbit button clicked');
+      }
+    });
   }
   range = new FormGroup({
     start: new FormControl<Date | null>(null),
