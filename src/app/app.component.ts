@@ -10,13 +10,19 @@ import { MatInputPromptComponent } from './ng-material/mat-input-prompt/mat-inpu
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormGroup, FormControl } from '@angular/forms';
+ 
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+
 
 const url = AppSettings.frontEndPoints;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+   providers: [
+  
+     { provide: MAT_DATE_LOCALE, useValue: 'pl-PL' }]
 })
 
 export class AppComponent {

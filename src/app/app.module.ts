@@ -25,7 +25,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 // import { MatNativeDateModule } from '@angular/material/core';
 
  import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { DialogAddRangeComponent } from './dialog-add-range/dialog-add-range.component';
  
 @NgModule({
@@ -55,7 +55,7 @@ import { DialogAddRangeComponent } from './dialog-add-range/dialog-add-range.com
     BrowserAnimationsModule
 
   ],
-  providers: [DaysComponent, DatePipe
+  providers: [DaysComponent, DatePipe, { provide: MAT_DATE_LOCALE, useValue: 'pl-PL' },
   ],
   bootstrap: [AppComponent, ]
 })
