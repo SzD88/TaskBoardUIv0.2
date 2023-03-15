@@ -13,7 +13,7 @@ import { FormGroup, FormControl, NgModel } from '@angular/forms';
 import { TasksService } from '../services/tasks.service';
 import { CreateTask } from '../entities/CreateTask';
 import { DayDetailComponent } from '../day-detail/day-detail.component';
-
+import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-dialog-add-range',
   templateUrl: './dialog-add-range.component.html',

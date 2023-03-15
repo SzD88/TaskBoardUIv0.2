@@ -11,6 +11,7 @@ import { DayDetailComponent } from '../day-detail/day-detail.component';
 import { Day } from '../entities/Day';
 import { DaysComponent } from '../days/days.component';
 import { MatDatePickerComponent } from '../mat-date-picker/mat-date-picker.component';
+import { DialogAddRangeComponent } from '../dialog-add-range/dialog-add-range.component';
 
 
 @Component({
@@ -63,10 +64,11 @@ export class NavbarComponent {
       }
     );
   }
-  showCalendar(): void {
-    const dialogRef = this.dialog.open(MatDatePickerComponent, {
+  addRange(): void {
+    const dialogRef = this.dialog.open(DialogAddRangeComponent, {
       width: '350px',
-      height: '400px'
+      height: '290px',
+   
     });
 
   }

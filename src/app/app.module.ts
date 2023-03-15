@@ -27,7 +27,7 @@ import { FormGroup, FormControl } from '@angular/forms';
  import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { DialogAddRangeComponent } from './dialog-add-range/dialog-add-range.component';
- 
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +43,7 @@ import { DialogAddRangeComponent } from './dialog-add-range/dialog-add-range.com
   ],
   imports: [
     BrowserModule, NgMaterialModule, MatDatepickerModule, MatNativeDateModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, MatInputModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule, //  MatDatepickerModule,

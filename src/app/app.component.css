@@ -18,7 +18,9 @@ h2, h3 {
   font-weight: lighter;
 }
 
- 
+mat-form-field {
+  margin-left: 42px;
+}
 body {
   margin: 2em;
 }

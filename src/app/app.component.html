@@ -32,7 +32,7 @@
 
 
 
-<mat-form-field appearance="fill">
+<mat-form-field class="jumpTo" appearance="fill">
   <mat-label>Skocz do dnia</mat-label>
   <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY">
  
@@ -56,4 +56,4 @@
   <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
   <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
 </mat-form-field>-->
-<app-dialog-add-range></app-dialog-add-range>
+<!--<app-dialog-add-range></app-dialog-add-range>-->

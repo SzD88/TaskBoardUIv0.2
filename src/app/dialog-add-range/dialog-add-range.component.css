@@ -1,9 +1,12 @@
 .zakresCalosc {
-border : double ;
-
-margin-left: 46px;
-
  
+ margin-top:4px;
+ align-self:center;
+ height:90%;
+
+ text-align:center;
+
+
 }
 
 
@@ -15,8 +18,13 @@ mat-hint {
 }
 
 
-.inputForRange {
-    font-size:44px;
-    width:100%;
+ 
 
+.postRange {
+font-size:44px;
+align-self:center;
+}
+
+.inputForRange {
+  width: 100%;
 }
