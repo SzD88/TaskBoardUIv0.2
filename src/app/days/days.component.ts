@@ -45,16 +45,16 @@ export class DaysComponent implements OnInit {
       this.myData = data;
     });
 
-    this.daysService.getWeekly(0).subscribe((data) => {
+    this.daysService.getWeekly(-1).subscribe((data) => {
       this.currentWeek = data;
     });
-    this.daysService.getWeekly(1).subscribe((data) => {
+    this.daysService.getWeekly(0).subscribe((data) => {
       this.week1 = data;
     });
-    this.daysService.getWeekly(2).subscribe((data) => {
+    this.daysService.getWeekly(1).subscribe((data) => {
       this.week2 = data;
     });
-    this.daysService.getWeekly(3).subscribe((data) => {
+    this.daysService.getWeekly(2).subscribe((data) => {
       this.week3 = data;
     });
 

@@ -1,0 +1,22 @@
+.zakresCalosc {
+border : double ;
+
+margin-left: 46px;
+
+ 
+}
+
+
+mat-form-field {
+  
+}
+mat-hint {
+ 
+}
+
+
+.inputForRange {
+    font-size:44px;
+    width:100%;
+
+}
