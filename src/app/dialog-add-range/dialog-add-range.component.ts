@@ -14,6 +14,9 @@ import { TasksService } from '../services/tasks.service';
 import { CreateTask } from '../entities/CreateTask';
 import { DayDetailComponent } from '../day-detail/day-detail.component';
 import { MatInputModule } from '@angular/material/input';
+import { CreateTaskRange } from '../entities/CreateTaskRange';
+
+
 @Component({
   selector: 'app-dialog-add-range',
   templateUrl: './dialog-add-range.component.html',
@@ -31,6 +34,8 @@ export class DialogAddRangeComponent {
   dateFrom: string = '';
   dateTo: string = '';
 
+  inputText: string = '';
+
 
   constructor(private dialog: MatDialog, private tasksService: TasksService,
     private dayDetailComponent: DayDetailComponent) { }
@@ -47,6 +52,7 @@ export class DialogAddRangeComponent {
     const ref: MatDialogRef<MatConfirmComponent> = this.dialog.open(
       MatConfirmComponent,
       {
+        
         width: '600px',
         height: '210px',
         data: {
@@ -74,23 +80,27 @@ export class DialogAddRangeComponent {
     end: new FormControl<Date | null>(null),
   });
 
-  async postRange(from: any, to: any): Promise<void> {
+  async postRange(from: any, to: any, content:string): Promise<void> {
+
+    
 
     var eventStartTime = new Date(from);
+
+    eventStartTime.setDate(eventStartTime.getDate() + 1);
+
     var eventEndTime = new Date(to);
     var duration = eventEndTime.valueOf() - eventStartTime.valueOf();
     var daysAhead = (duration / 3600000) / 24;
 
-    for (var i = 0; i < daysAhead; i++) {
+    for (var i = 0; i < daysAhead + 2; i++) {
       //fetch to service
-      const newTask: CreateTask = {
+      const newTask: CreateTaskRange = {
 
-        content: "test",
+        content: content,
         dayDate: eventStartTime,
-        levelAboveId: 0
       };
-
       var jsn = JSON.stringify(newTask)
+      console.log("before fetch" +  jsn);
 
       console.log(jsn);
       this.tasksService.addTask(JSON.parse(jsn));
@@ -98,7 +108,7 @@ export class DialogAddRangeComponent {
       eventStartTime.setDate(eventStartTime.getDate() + 1);
     }
     await this.dayDetailComponent.delay(500);
-    this.dayDetailComponent.refresh();
+     this.dayDetailComponent.refresh();
   }
 
   public onDateChanged(event: any) {

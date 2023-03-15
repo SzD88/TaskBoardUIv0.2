@@ -19,9 +19,9 @@
 
     <mat-form-field class="inputForRange" name="inputForRange">
       <mat-label>Wprowadź nowe zadanie dla wielu dni</mat-label>
-      <textarea matInput placeholder=""></textarea>
+      <textarea matInput placeholder="" #input1 [(ngModel)]='inputText'></textarea>
     </mat-form-field>
     <Br />
-    <button class="postRange" (click)="postRange(dateFrom, dateTo )">Dodaj</button>
+    <button class="postRange" (click)="postRange(dateFrom, dateTo, inputText )">Dodaj</button>
   </div>
 </div>
