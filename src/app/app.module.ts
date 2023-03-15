@@ -55,7 +55,7 @@ import { DialogAddRangeComponent } from './dialog-add-range/dialog-add-range.com
     BrowserAnimationsModule
 
   ],
-  providers: [DaysComponent, DatePipe, { provide: MAT_DATE_LOCALE, useValue: 'pl-PL' },
+  providers: [DaysComponent, DayDetailComponent,  DatePipe, { provide: MAT_DATE_LOCALE, useValue: 'pl-PL' },
   ],
   bootstrap: [AppComponent, ]
 })

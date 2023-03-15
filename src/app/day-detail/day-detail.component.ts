@@ -47,6 +47,10 @@ export class DayDetailComponent implements OnInit
   refresh() {
     window.location.href = AppSettings.frontEndPoints;
   }
+  //DELAY
+  delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
   //GETVALUE
   getValue(event: Event): string {
     return (event.target as HTMLInputElement).value;
@@ -94,10 +98,7 @@ export class DayDetailComponent implements OnInit
     await this.delay(500);
     this.refresh();
   }
-  //DELAY
-  delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+
   setValue(enter:string) {
      this.name = enter;
   }
