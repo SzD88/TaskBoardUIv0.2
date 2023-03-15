@@ -35,6 +35,12 @@ export class DayDetailComponent implements OnInit
   ) {
       
   }
+  //SET DAY
+  setDay(dayEnter: Day) {
+
+    this.day == dayEnter;
+  }
+
   //DELETE METHOD
   async deleteTask(day: Day, id: number) {
       console.log("delete inside");

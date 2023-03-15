@@ -4,12 +4,13 @@
     "\\.angular",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\day-detail",
+    "\\src\\app\\days",
     "\\src\\app\\dialog-add-range",
-    "\\src\\app\\mat-date-picker",
-    "\\src\\app\\ng-material",
-    "\\src\\app\\ng-material\\mat-date-picker",
-    "\\src\\app\\ng-material\\mat-input-prompt"
+    "\\src\\app\\entities",
+    "\\src\\app\\navbar",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\app.module.ts",
+  "SelectedNode": "\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }

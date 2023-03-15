@@ -66,6 +66,13 @@ export class DaysService {
     var day = this.http.get<Day>(urlWithId);
     return day;
   }
+
+  getDayByDate(date: string | null): Observable<Day> {
+    let urlWithId = daysUrl + "/date/" + date
+
+    var day = this.http.get<Day>(urlWithId);
+    return day;
+  }
  
 
   updateDay(enter: JSON): Observable<JSON> { 

@@ -17,7 +17,10 @@ import { Task } from './entities/Task';
 import { DayDetailComponent } from './day-detail/day-detail.component';
 import { DaysComponent } from './days/days.component';
 import { empty } from 'rxjs';
+import { formatDate } from '@angular/common';
+import { DaysService } from './services/days.service';
 
+import { DatePipe } from '@angular/common';
 
 
 const url = AppSettings.frontEndPoints;
@@ -37,12 +40,12 @@ export class AppComponent {
   intranet = AppSettings.intranet;
 
 dateToJump: string = '';
-
+  toDisplay: any | null;
   selectedDay?: Day;
 
   dataFromDialog: any;
 
-  constructor(private dialog: MatDialog, private daysComponent: DaysComponent) { }
+  constructor(private dialog: MatDialog, private daysComponent: DaysComponent, private daysService: DaysService, private datepipe: DatePipe, private dayDetailComponent: DayDetailComponent ) { }
 
   alertDialog() {
     const dialogRef = this.dialog.open(MatAlertComponent, {
@@ -54,9 +57,34 @@ dateToJump: string = '';
 
   jumpToDay(date: string): void { // day: Day
 
+
     //var dateType = new Date(date);
+
+
+    var dateType1 = new Date(date).toLocaleString();
+     
+    let latest_date =  this.datepipe.transform(date, 'yyyy-MM-dd');
+
+    console.log(latest_date + "          forma daty");
+    console.log(typeof (dateType1));
+
+     
+   
+    this.daysService.getDayByDate(latest_date).subscribe((data) => {
+     this.toDisplay = data;
+      console.log(data);
+
+
+      this.daysComponent.onSelect(data);
+
+//       this.dayDetailComponent.setDay(data);
+
+   });
+
+
+
     //const dday: Day = {
-    //  id: 123,
+    //  id: dayToDisplay.,
     //  dayDate: dateType,
     //  title: "x",
     //  description: "x",
@@ -71,9 +99,9 @@ dateToJump: string = '';
 
     //console.log(dayConverted.dayDate);
 
+   //   console.log(this.toDisplay);
 
-
-    //this.daysComponent.onSelect(dayConverted);
+    this.daysComponent.onSelect(this.toDisplay);
 
    //  var cos = new Day();
     // this.selectedDay = ;
