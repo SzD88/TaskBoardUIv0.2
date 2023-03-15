@@ -12,6 +12,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormGroup, FormControl } from '@angular/forms';
  
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { Day } from './entities/Day';
+import { Task } from './entities/Task';
+import { DayDetailComponent } from './day-detail/day-detail.component';
+import { DaysComponent } from './days/days.component';
+import { empty } from 'rxjs';
+
 
 
 const url = AppSettings.frontEndPoints;
@@ -30,9 +36,13 @@ export class AppComponent {
   frontEndPoints = AppSettings.frontEndPoints;
   intranet = AppSettings.intranet;
 
+dateToJump: string = '';
+
+  selectedDay?: Day;
+
   dataFromDialog: any;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private daysComponent: DaysComponent) { }
 
   alertDialog() {
     const dialogRef = this.dialog.open(MatAlertComponent, {
@@ -40,6 +50,33 @@ export class AppComponent {
         message: 'Hello World from Edupala',
       },
     });
+  }
+
+  jumpToDay(date: string): void { // day: Day
+
+    //var dateType = new Date(date);
+    //const dday: Day = {
+    //  id: 123,
+    //  dayDate: dateType,
+    //  title: "x",
+    //  description: "x",
+    //  completed: false,
+    //  mainTasks: Task[] = { }
+    //}
+
+    //var dt = new Date(date);
+
+
+    //dayConverted.dayDate = dt;
+
+    //console.log(dayConverted.dayDate);
+
+
+
+    //this.daysComponent.onSelect(dayConverted);
+
+   //  var cos = new Day();
+    // this.selectedDay = ;
   }
 
   confirmDialog() {
