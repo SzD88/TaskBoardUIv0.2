@@ -3,7 +3,7 @@ import { Day } from '../entities/Day';
 import { DaysService } from '../services/days.service';
 import { MessageService } from '../services/message.service';
 import { DatePipe } from '@angular/common';
-import { empty } from 'rxjs';
+import { catchError, empty, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-days',
@@ -38,11 +38,21 @@ export class DaysComponent implements OnInit {
     this.selectedDay = day;
     this.messageService.add(`ProjectsService: Selected project number`);
   }
+
   jumpToDay(date: string): void {
 
     this.selectedDay;
     let latest_date = this.datepipe.transform(date, 'yyyy-MM-dd');
-    this.daysService.getDayByDate(latest_date).subscribe(x => this.selectedDay = x); 
+
+      this.daysService.getDayByDate(latest_date)
+       
+      .subscribe(x => this.selectedDay = x);
+
+    console.log("main taks:");
+    console.log(this.selectedDay);
+    if (this.selectedDay === undefined) {
+
+    }
   }
 
   ngOnInit(): void {

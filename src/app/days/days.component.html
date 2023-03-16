@@ -1,5 +1,4 @@
-<div *ngIf="show">
-
+ 
 
   <Div class="jumpDiv">
     <mat-form-field class="jumpTo" appearance="fill">
@@ -14,33 +13,35 @@
 
   </Div>
 
-  <app-day-detail [day]="selectedDay"></app-day-detail>
+  <footer *ngIf="show">
 
-  <div class="calendar">
-    <!--<h2>Dni: </h2>-->
-    <ul class="ulClass">
-      <li class="liClass" *ngFor="let day of currentWeek">
+    <app-day-detail [day]="selectedDay"></app-day-detail>
+  </footer>
+    <div class="calendar">
+      <!--<h2>Dni: </h2>-->
+      <ul class="ulClass">
+        <li class="liClass" *ngFor="let day of currentWeek">
 
-        {{setDate(day.dayDate)}}
-
-
-
-        <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)"
-             [ngStyle]="{'background-color': getColor()}">
-          <span>{{day.dayDate |  date:'d-MM-y' }}</span>
-
-          <div class="divClass2">
-
-      <li class="liClass2" *ngFor="let cos of day.mainTasks">
-
-        <div class="box"> {{cos.content}} </div>
+          {{setDate(day.dayDate)}}
 
 
-      </li>
-  </div>
-</div>
-  </li>
-</ul>
+
+          <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)"
+               [ngStyle]="{'background-color': getColor()}">
+            <span>{{day.dayDate |  date:'d-MM-y' }}</span>
+
+            <div class="divClass2">
+
+        <li class="liClass2" *ngFor="let cos of day.mainTasks">
+
+          <div class="box"> {{cos.content}} </div>
+
+
+        </li>
+    </div>
+    </div>
+    </li>
+    </ul>
 
 
 <ul class="ulClass">
@@ -108,6 +109,6 @@
 </div>
 
 
-</div>
+
 
 
