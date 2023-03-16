@@ -26,7 +26,22 @@
 
    
 }
+.jumpButton {
+  margin-left: 42px;
+  margin-top: 0;
+  display: inline;
+  width: 250px;
+}
+.jumpDiv {
+    display: inline;
+    width:100%;
+}
+.jumpTo {
+  margin-bottom: 0;
 
+  margin-left: 42px;
+  margin-top: 5px;
+}
 .calendar {
   padding: 0;
 }

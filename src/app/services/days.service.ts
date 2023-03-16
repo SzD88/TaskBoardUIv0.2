@@ -71,6 +71,7 @@ export class DaysService {
     let urlWithId = daysUrl + "/date/" + date
 
     var day = this.http.get<Day>(urlWithId);
+     
     return day;
   }
  

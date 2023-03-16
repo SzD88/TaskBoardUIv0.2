@@ -22,8 +22,8 @@ import { DaysService } from './services/days.service';
 
 import { DatePipe } from '@angular/common';
 
-
 const url = AppSettings.frontEndPoints;
+
 
 @Component({
   selector: 'app-root',
@@ -42,7 +42,7 @@ export class AppComponent {
 dateToJump: string = '';
   toDisplay: any | null;
   selectedDay?: Day;
-
+  testData: any; // a jak nie to implements on init
   dataFromDialog: any;
 
   constructor(private dialog: MatDialog, private daysComponent: DaysComponent, private daysService: DaysService, private datepipe: DatePipe, private dayDetailComponent: DayDetailComponent ) { }
@@ -50,7 +50,7 @@ dateToJump: string = '';
   alertDialog() {
     const dialogRef = this.dialog.open(MatAlertComponent, {
       data: {
-        message: 'Hello World from Edupala',
+        message: 'Hello   from test',
       },
     });
   }
@@ -65,22 +65,29 @@ dateToJump: string = '';
      
     let latest_date =  this.datepipe.transform(date, 'yyyy-MM-dd');
 
-    console.log(latest_date + "          forma daty");
-    console.log(typeof (dateType1));
+    //console.log(latest_date + "          forma daty");
+    //console.log(typeof (dateType1));
 
      
    
     this.daysService.getDayByDate(latest_date).subscribe((data) => {
-     this.toDisplay = data;
+      this.testData = data;
       console.log(data);
 
+    //  this.dayDetailComponent.setDay(this.testData);
 
       this.daysComponent.onSelect(data);
+      //this.daysComponent.selectedDay = data;
 
-//       this.dayDetailComponent.setDay(data);
+      console.log("bTOTOTOTOT" + this.testData);
+     //     this.dayDetailComponent.day = data;
+
+      this.daysComponent.onSelect(this.testData);
+
 
    });
 
+    this.daysComponent.onSelect(this.testData);
 
 
     //const dday: Day = {
@@ -101,7 +108,6 @@ dateToJump: string = '';
 
    //   console.log(this.toDisplay);
 
-    this.daysComponent.onSelect(this.toDisplay);
 
    //  var cos = new Day();
     // this.selectedDay = ;

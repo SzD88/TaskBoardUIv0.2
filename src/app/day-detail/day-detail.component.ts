@@ -24,7 +24,7 @@ export class DayDetailComponent implements OnInit
 
   changedDay?: Day;
 
-  @Input() day?: Day; // to jest powiazane z selected project
+  @Input() day?: Day; // to jest powiazane z selected day
 
   constructor(private daysService: DaysService,
     private tasksService: TasksService,
@@ -36,9 +36,20 @@ export class DayDetailComponent implements OnInit
       
   }
   //SET DAY
-  setDay(dayEnter: Day) {
+  setDay(dayEnter: Day ) {
 
-    this.day == dayEnter;
+    //this.daysService.getDayByDate(date).subscribe((data) => {
+    //  this.day = data;
+
+    //  console.log(this.day);
+    //  console.log("inside subscribe");
+      
+    //});
+    this.day = dayEnter;
+
+    console.log(this.day);
+
+    console.log("totototo22");
   }
 
   //DELETE METHOD
@@ -82,7 +93,8 @@ export class DayDetailComponent implements OnInit
 
   }
 
- 
+  ngOnInit() {
+  }
   //CREATE SUBTASK
   async onEnterCreate(content: string, date: Date) {
     console.log("enter pressed");
@@ -113,8 +125,7 @@ export class DayDetailComponent implements OnInit
 
     this.ngOnInit();
   }
-  ngOnInit() {
-  }
+  
   overrideDay(id: string, projectNumber: string, title: string, description: string, completed: boolean) {
   }
  
