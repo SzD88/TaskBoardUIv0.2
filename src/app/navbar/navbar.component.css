@@ -21,7 +21,8 @@ h1 {
 
 }
 .addMany {
-width : 523px;
+  width: 523px;
+  cursor: pointer;
 }
 .navbarAll {
   margin-left: 41px;
