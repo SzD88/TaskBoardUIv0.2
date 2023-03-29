@@ -1,44 +1,43 @@
- 
-
-  <Div class="jumpDiv">
-    <mat-form-field class="jumpTo" appearance="fill">
-      <mat-label>Skocz do dnia</mat-label>
-      <input matInput [matDatepicker]="picker" placeholder="dd/mm/rrrr" #dateToJump1 [(ngModel)]="dateToJump" (dateChange)="jumpToDay(dateToJump)">
-
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-
-    <!--<div *ngIf="dateToJump"><button class="jumpButton" (click)="jumpToDay(dateToJump)">Znajdz</button>  </div>-->
-
-  </Div>
-
-  <footer *ngIf="show">
-
-    <app-day-detail [day]="selectedDay"></app-day-detail>
-  </footer>
-    <div class="calendar">
-      <!--<h2>Dni: </h2>-->
-      <ul class="ulClass">
-        <li class="liClass" *ngFor="let day of currentWeek">
-
-          {{setDate(day.dayDate)}}
 
 
+<Div class="jumpDiv">
+  <mat-form-field class="jumpTo" appearance="fill">
+    <mat-label>Skocz do dnia</mat-label>
+    <input matInput [matDatepicker]="picker" placeholder="dd/mm/rrrr" #dateToJump1 [(ngModel)]="dateToJump" (dateChange)="jumpToDay(dateToJump)">
 
-          <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)"
-               [ngStyle]="{'background-color': getColor()}">
-            <span>{{day.dayDate |  date:'d-MM-y' }}</span>
-
-            <div class="divClass2">
-
-        <li class="liClass2" *ngFor="let cos of day.mainTasks">
-
-          <div class="box"> {{cos.content}} </div>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
 
 
-        </li>
-    </div>
+</Div>
+
+<footer *ngIf="show">
+
+  <app-day-detail [day]="selectedDay"></app-day-detail>
+</footer>
+<div class="calendar">
+  <!--<h2>Dni: </h2>-->
+  <ul class="ulClass">
+    <li class="liClass" *ngFor="let day of currentWeek">
+
+      {{setDate(day.dayDate)}}
+
+
+
+      <div class='btn' [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)"
+           [ngStyle]="{'background-color': getColor()}">
+        <span>{{day.dayDate |  date:'d-MM-y' }}</span>
+
+        <div class="divClass2">
+
+    <li class="liClass2" *ngFor="let cos of day.mainTasks">
+
+      <div class="box"> {{cos.content}} </div>
+
+
+    </li>
+</div>
     </div>
     </li>
     </ul>

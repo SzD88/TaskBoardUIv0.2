@@ -7,7 +7,6 @@ import { DaysComponent } from './days/days.component';
 
 const routes: Routes = [
   { path: 'projects', component: DaysComponent },
- // { path: 'create', component: DayCreateComponent }
 ];
 
 @NgModule({

@@ -1,14 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-import { Day } from '../entities/Day';
-import { DaysComponent } from '../days/days.component';
-import { DaysService } from '../services/days.service';
-import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
-import { TasksService } from '../services/tasks.service';
-import { Task } from '../entities/Task';
-import { CreateTask } from '../entities/CreateTask';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppSettings } from '../AppSettings';
+import { DaysComponent } from '../days/days.component';
+import { CreateTask } from '../entities/CreateTask';
+import { Day } from '../entities/Day';
+import { Task } from '../entities/Task';
+import { DaysService } from '../services/days.service';
+import { TasksService } from '../services/tasks.service';
 
 
 @Component({
@@ -19,12 +17,12 @@ import { AppSettings } from '../AppSettings';
 export class DayDetailComponent implements OnInit
 {
   inputs = [1];
- // name = new FormControl('');
+
   name: string = '';
 
   changedDay?: Day;
 
-  @Input() day?: Day; // to jest powiazane z selected day
+  @Input() day?: Day; 
 
   constructor(private daysService: DaysService,
     private tasksService: TasksService,
@@ -38,13 +36,6 @@ export class DayDetailComponent implements OnInit
   //SET DAY
   setDay(dayEnter: Day ) {
 
-    //this.daysService.getDayByDate(date).subscribe((data) => {
-    //  this.day = data;
-
-    //  console.log(this.day);
-    //  console.log("inside subscribe");
-      
-    //});
     this.day = dayEnter;
 
     console.log(this.day);

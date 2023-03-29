@@ -3,6 +3,5 @@ export interface Task {
   content: string;
   completed: boolean;
   dayDate: Date ;
-
   levelAboveId: number;
 }

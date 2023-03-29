@@ -1,21 +1,13 @@
 import { Component } from '@angular/core';
-import { AppSettings } from '../AppSettings';
-// import { MaterialModule } from './material/material.module';
-import { DialogBodyComponent } from '../dialog-body/dialog-body.component';
-
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { AppSettings } from '../AppSettings';
+import { DayDetailComponent } from '../day-detail/day-detail.component';
+import { CreateTaskRange } from '../entities/CreateTaskRange';
 import { MatAlertComponent } from '../ng-material/mat-alert/mat-alert.component';
 import { MatConfirmComponent } from '../ng-material/mat-confirm/mat-confirm.component';
 import { MatInputPromptComponent } from '../ng-material/mat-input-prompt/mat-input-prompt.component';
-
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { FormGroup, FormControl, NgModel } from '@angular/forms';
 import { TasksService } from '../services/tasks.service';
-import { CreateTask } from '../entities/CreateTask';
-import { DayDetailComponent } from '../day-detail/day-detail.component';
-import { MatInputModule } from '@angular/material/input';
-import { CreateTaskRange } from '../entities/CreateTaskRange';
-
 
 @Component({
   selector: 'app-dialog-add-range',
@@ -30,10 +22,8 @@ export class DialogAddRangeComponent {
   dataFromDialog: any;
   roomsFilter: any;
 
-
   dateFrom: string = '';
   dateTo: string = '';
-
   inputText: string = '';
 
 
@@ -82,8 +72,6 @@ export class DialogAddRangeComponent {
 
   async postRange(from: any, to: any, content:string): Promise<void> {
 
-    
-
     var eventStartTime = new Date(from);
 
     eventStartTime.setDate(eventStartTime.getDate() + 1);
@@ -93,7 +81,7 @@ export class DialogAddRangeComponent {
     var daysAhead = (duration / 3600000) / 24;
 
     for (var i = 0; i < daysAhead + 2; i++) {
-      //fetch to service
+
       const newTask: CreateTaskRange = {
 
         content: content,
@@ -112,7 +100,6 @@ export class DialogAddRangeComponent {
   }
 
   public onDateChanged(event: any) {
-    //  console.log(new Date(event).getMonth());
-    console.log("any");
+
   } 
 }

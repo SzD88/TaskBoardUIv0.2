@@ -1,9 +1,8 @@
+import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Day } from '../entities/Day';
 import { DaysService } from '../services/days.service';
 import { MessageService } from '../services/message.service';
-import { DatePipe } from '@angular/common';
-import { catchError, empty, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-days',
@@ -32,7 +31,6 @@ export class DaysComponent implements OnInit {
 
   hide() {
     this.show = false;
-
   }
   onSelect(day: Day): void {
     this.selectedDay = day;
@@ -51,13 +49,10 @@ export class DaysComponent implements OnInit {
     console.log("main taks:");
     console.log(this.selectedDay);
     if (this.selectedDay === undefined) {
-
     }
   }
 
   ngOnInit(): void {
-
-
     this.daysService.getAllDays().subscribe((data) => {
       this.myData = data;
     });
@@ -77,22 +72,13 @@ export class DaysComponent implements OnInit {
 
   }
   setDate(enter: Date) {
-
     this.dateToCheck = enter;
-
   }
-  //kolor zmiana
   getColor() {
-
-    //console.log( typeof ( this.dateToCheck  )  );
-    //console.log( typeof ( this.currentDate.getUTCDate() ));
-    //console.log( this.dateToCheck );
-    //console.log(this.currentDate);
 
     let date1 = this.datepipe.transform(this.dateToCheck, 'yyyy-MM-dd');
     let date2 = this.datepipe.transform(this.currentDate, 'yyyy-MM-dd');
-    //  console.log(date1);
-    // console.log(date2);
+
     if (date1 === date2) {
       return "darkseagreen";
     }
@@ -107,7 +93,6 @@ export class DaysComponent implements OnInit {
     return "lightyellow";
 
   }
-
 }
 
 
