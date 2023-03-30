@@ -4,7 +4,7 @@ It is user interface for TaskBoard application.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
  
-TypeScript, HTML, CSS, Angular, Angular Materials.
+Used technologies: TypeScript, HTML, CSS, Angular, Angular Materials.
 
 Work presentation: youtube
 
