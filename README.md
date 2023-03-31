@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  
 Used technologies: TypeScript, HTML, CSS, Angular, Angular Materials.
 
-Work presentation: youtube
+Work presentation: https://www.youtube.com/watch?v=KuSqjtiy9IQ
 
 ## Development server
 
